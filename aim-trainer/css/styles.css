@@ -1,0 +1,66 @@
+/* NAVBAR */
+nav {
+    width: 100%;
+    background: #333;
+  }
+  nav ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  nav li {
+    flex: 1;               /* make each tab equal width */
+  }
+  nav a {
+    display: block;        /* fill the entire li */
+    padding: 0.75rem 0;    /* match button vertical padding */
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    line-height: 1.2;      /* keep text vertically centered */
+  }
+  nav a.active {
+    background: #555;
+  }
+  
+  /* MAIN LAYOUT */
+  body {
+    margin: 0; font-family: sans-serif;
+    background: #222; color: #fff;
+  }
+  main {
+    position: relative; height: calc(100vh - 50px);
+  }
+  
+  /* GAME CONTAINER */
+  #game-container { width: 100%; height: 100%; }
+  #menu, #stats {
+    position: absolute; top:50%; left:50%;
+    transform: translate(-50%, -50%);
+  }
+  #game {
+    display: none; background: #000;
+    border: 2px solid #555; margin: auto;
+    cursor: none; /* hide OS cursor when locked */
+  }
+  
+  /* PROFILE CONTAINER */
+  #profile-container {
+    display: none; padding: 2rem; text-align: center;
+  }
+  #profile-form {
+    display: inline-block; text-align: left;
+  }
+  #profile-form label {
+    display: block; margin: 0.5rem 0;
+  }
+  #profile-form input {
+    width: 100%; padding: 0.5rem; margin-top: 0.25rem;
+  }
+  button {
+    margin-top: 1rem; padding: 0.75rem 1.5rem;
+    cursor: pointer;
+  }
+  
