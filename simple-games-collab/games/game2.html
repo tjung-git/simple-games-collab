@@ -3,41 +3,63 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Game 2 – Valorant Aim Trainer</title>
+  <title>Number Guessing Game - Simple Games</title>
   <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/game2.css" />
 </head>
 <body>
-  <!-- NAVBAR -->
-  <nav>
-    <ul>
-      <li><a href="../index.html"       id="nav-home">Home</a></li>
-      <li><a href="../about.html"       id="nav-about">About</a></li>
-      <li><a href="../games/game1.html" id="nav-game1">Game 1</a></li>
-      <li><a href="../games/game2.html" id="nav-game2">Game 2</a></li>
-      <li><a href="../games/game3.html" id="nav-game3">Game 3</a></li>
-      <li><a href="../contact.html"     id="nav-contact">Contact</a></li>
-      <li><a href="../settings/profile.html" id="nav-profile">Profile</a></li>
-    </ul>
-  </nav>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="../index.html" id="nav-home">Home</a></li>
+        <li><a href="../about.html" id="nav-about">About</a></li>
+        <li><a href="../games/game1.html" id="nav-game1">Game 1</a></li>
+        <li><a href="../games/game2.html" id="nav-game2">Guess A Number</a></li>
+        <li><a href="../games/game3.html" id="nav-game3">Game 3</a></li>
+        <li><a href="../contact.html" id="nav-contact">Contact</a></li>
+        <li><a href="../settings/profile.html" id="nav-profile">Profile</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <main>
-    <!-- GAME VIEW -->
-    <div id="game-container">
-      <div id="menu">
-        <h1>Game 2: Valorant Aim Trainer</h1>
-        <button data-diff="easy">Easy</button>
-        <button data-diff="medium">Medium</button>
-        <button data-diff="hard">Hard</button>
+    <section class="game-container">
+      <h1>Number Guessing Game</h1>
+      
+      <div class="game-controls">
+        <select id="difficulty">
+          <option value="25">Easy (1-25)</option>
+          <option value="100" selected>Medium (1-100)</option>
+          <option value="500">Hard (1-500)</option>
+        </select>
+        <button id="start-btn">New Game</button>
       </div>
-      <canvas id="game" width="800" height="600"></canvas>
-      <div id="stats">
-        <h2>Game Over</h2>
-        <p>Score: <span id="score">0</span></p>
-        <p>Accuracy: <span id="acc">0%</span></p>
-        <button id="restart">Play Again</button>
+
+      <div class="game-area">
+        <p id="instructions" data-default="Guess a number between 1-{max}:">
+          Guess a number between 1-100:
+        </p>
+        <div class="input-group">
+          <label for="guess-input">Enter your guess</label>
+          <input type="number" id="guess-input" name="guess-input" min="1" max="100" required class="guess-input">
+          <span id="input-error" class="error-message"></span>
+        </div>
+        <button id="submit-guess">Submit Guess</button>
+        
+        <div id="feedback">
+          <p id="message"></p>
+          <p id="attempts">Attempts: 0</p>
+          <p id="score">Score: 0</p>
+          <p id="high-score">High Score: 0</p>
+          <ul id="guess-history"></ul>
+        </div>
       </div>
-    </div>
+    </section>
   </main>
+
+  <footer>
+    <p>&copy; 2025 Simple Games Gang</p>
+  </footer>
 
   <script src="../js/games/game2.js"></script>
 </body>
