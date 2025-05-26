@@ -1,0 +1,42 @@
+#game-container {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+#menu,
+#stats {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#game {
+  display: none;
+  background: #000;
+  border: 2px solid #555;
+  margin: auto;
+  cursor: none;
+}
+
+#tracking-container {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+#tracking-menu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#tracking-canvas {
+  display: none;
+  background: #000;
+  border: 2px solid #555;
+  margin: auto;
+}
+#tracking-ui {
+  display: none;
+  text-align: center;
+  margin-top: 0.5rem;
+}
