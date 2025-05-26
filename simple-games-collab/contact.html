@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact - Simple Games</title>
   <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="./css/contact.css" />
 </head>
 <body>
   <header>
@@ -12,7 +13,7 @@
       <ul>
         <li><a href="./index.html" id="nav-home">Home</a></li>
         <li><a href="./about.html" id="nav-about">About</a></li>
-        <li><a href="./games/game1.html" id="nav-game1">Game 1</a></li>
+        <li><a href="./games/game1.html" id="nav-game1">Aim Trainer</a></li>
         <li><a href="./games/game2.html" id="nav-game2">Guess A Number</a></li>
         <li><a href="./games/game3.html" id="nav-game3">Memory Match Game</a></li>
         <li><a href="./contact.html" id="nav-contact">Contact</a></li>
@@ -24,33 +25,74 @@
   <main>
     <section class="contact">
       <h1>Contact Us</h1>
-      <form id="contact-form">
+      <form id="contact-form" novalidate>
         <div class="form-group">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required>
+          <label for="name">Name <span>*</span></label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your full name"
+            required
+            minlength="2"
+          />
+          <small class="error-message"></small>
         </div>
         
         <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required>
+          <label for="email">Email <span>*</span></label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="you@example.com"
+            required
+          />
+          <small class="error-message"></small>
         </div>
         
         <div class="form-group">
-          <label for="subject">Subject:</label>
-          <input type="text" id="subject" name="subject">
+          <label for="subject">Subject</label>
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            placeholder="Subject (optional)"
+          />
+          <small class="error-message"></small>
         </div>
         
         <div class="form-group">
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
+          <label for="message">Message <span>*</span></label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Write your message here..."
+            required
+            minlength="10"
+          ></textarea>
+          <small class="error-message"></small>
         </div>
         
         <div class="form-group">
-          <label>Preferred Contact Method:</label>
-          <select name="contact-method">
+          <label for="contact-method">Preferred Contact Method</label>
+          <select name="contact-method" id="contact-method">
             <option value="email">Email</option>
             <option value="phone">Phone</option>
           </select>
+        </div>
+        
+        <div class="form-group hidden" id="phone-group">
+          <label for="phone">Phone Number <span>*</span></label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="123-456-7890"
+            pattern="^\d{3}-\d{3}-\d{4}$"
+          />
+          <small class="error-message"></small>
         </div>
         
         <button type="submit">Send Message</button>

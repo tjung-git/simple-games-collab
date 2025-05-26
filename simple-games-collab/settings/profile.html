@@ -1,46 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Profile</title>
-  <link rel="stylesheet" href="../css/styles.css" />
-</head>
-<body>
-  <!-- NAVBAR -->
-  <nav>
-    <ul>
-      <li><a href="../index.html"       id="nav-home">Home</a></li>
-      <li><a href="../about.html"       id="nav-about">About</a></li>
-      <li><a href="../games/game1.html" id="nav-game1">Game 1</a></li>
-      <li><a href="../games/game2.html" id="nav-game2">Game 2</a></li>
-      <li><a href="../games/game3.html" id="nav-game3">Memory Match Game</a></li>
-      <li><a href="../contact.html"     id="nav-contact">Contact</a></li>
-      <li><a href="../settings/profile.html" id="nav-profile">Profile</a></li>
-    </ul>
-  </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile - Simple Games</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/profile.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="../index.html" id="nav-home">Home</a></li>
+        <li><a href="../about.html" id="nav-about">About</a></li>
+        <li><a href="../games/game1.html" id="nav-game1">Aim Trainer</a></li>
+        <li><a href="../games/game2.html" id="nav-game2">Guess A Number</a></li>
+        <li>
+          <a href="../games/game3.html" id="nav-game3">Memory Match Game</a>
+        </li>
+        <li><a href="../contact.html" id="nav-contact">Contact</a></li>
+        <li><a href="../settings/profile.html" id="nav-profile">Profile</a></li>
+      </ul>
+    </nav>
 
-  <main>
-    <h2>Your Profile</h2>
-    <form id="profile-form">
-      <label>
-        Username:
-        <input type="text" id="username" placeholder="Enter your name" />
-      </label>
-      <label>
-        Mouse Sensitivity Multiplier:
-        <input
-          type="number"
-          id="sensValorant"
-          step="0.01"
-          placeholder="e.g. 0.45"
-        />
-      </label>
-      <button type="submit">Save Profile</button>
-    </form>
-    <p>Aim Trainer High Score: <span id="highscore">0</span></p>
-  </main>
+    <main>
+      <section class="profile">
+        <h1>Your Profile</h1>
+        <form id="profile-form" novalidate>
+          <div class="form-group">
+            <label for="username">Username <span>*</span></label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Enter your name"
+              required
+              minlength="2"
+            />
+            <small class="error-message"></small>
+          </div>
 
-  <script src="../js/settings/profile.js"></script>
-</body>
+          <!-- New Upload Photo Section -->
+          <div class="form-group">
+            <label for="photo">Profile Photo</label>
+            <input type="file" id="photo" name="photo" accept="image/*" />
+            <small class="error-message"></small>
+          </div>
+          <!-- End Upload Photo Section -->
+
+          <div class="form-group">
+            <label for="sensValorant"
+              >Mouse Sensitivity Multiplier <span>*</span></label
+            >
+            <input
+              type="number"
+              id="sensValorant"
+              name="sensValorant"
+              step="0.01"
+              placeholder="e.g. 0.45"
+              required
+              min="0.01"
+            />
+            <small class="error-message"></small>
+          </div>
+
+          <button type="submit">Save Profile</button>
+        </form>
+
+        <p class="highscore-display">
+          Aim Trainer High Score: <span id="highscore-aim">0</span>
+        </p>
+        <p class="highscore-display">
+          Guess a Number High Score: <span id="highscore-guess">0</span>
+        </p>
+        <p class="highscore-display">
+          Memory Match Game High Score: <span id="highscore-memory">0</span>
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Simple Games Gang</p>
+    </footer>
+
+    <script src="../js/settings/profile.js"></script>
+  </body>
 </html>

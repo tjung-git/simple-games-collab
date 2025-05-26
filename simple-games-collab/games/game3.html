@@ -1,31 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Memory Match Game - Simple Games</title>
-  <link rel="stylesheet" href="../css/styles.css" />
-  <link rel="stylesheet" href="../css/game3.css" />
-</head>
-<body>
-<header>
-  <nav>
-    <ul>
-      <li><a href="../index.html" id="nav-home">Home</a></li>
-      <li><a href="../about.html" id="nav-about">About</a></li>
-      <li><a href="../games/game1.html" id="nav-game1">Game 1</a></li>
-      <li><a href="../games/game2.html" id="nav-game2">Guess A Number</a></li>
-      <li><a href="../games/game3.html" id="nav-game3">Memory Match Game</a></li>
-      <li><a href="../contact.html" id="nav-contact">Contact</a></li>
-      <li><a href="../settings/profile.html" id="nav-profile">Profile</a></li>
-    </ul>
-  </nav>
-</header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Match Game - Simple Games</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/game3.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="../index.html" id="nav-home">Home</a></li>
+          <li><a href="../about.html" id="nav-about">About</a></li>
+          <li><a href="../games/game1.html" id="nav-game1">Aim Trainer</a></li>
+          <li>
+            <a href="../games/game2.html" id="nav-game2">Guess A Number</a>
+          </li>
+          <li>
+            <a href="../games/game3.html" id="nav-game3">Memory Match Game</a>
+          </li>
+          <li><a href="../contact.html" id="nav-contact">Contact</a></li>
+          <li>
+            <a href="../settings/profile.html" id="nav-profile">Profile</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
     <main>
-      <!-- GAME VIEW -->
       <div class="game-container">
-        <!-- difficulty menu -->
         <div id="menu">
           <h1>Memory Match</h1>
           <label for="difficulty">Difficulty:</label>
@@ -35,28 +39,20 @@
           </select>
         </div>
 
-        <!-- header with moves, timer & restart -->
         <div id="game-header">
           <div class="stats">
             <span id="moves">Moves: 0</span>
             <span id="timer">Time: 0s</span>
           </div>
-          <button id="resetBtn">🔄 Restart</button>
+          <button id="resetBtn">Restart</button>
         </div>
 
-        <!-- the card grid -->
-        <div id="grid" class="grid">
+        <div id="grid" class="grid"></div>
 
-        </div>
-
-
-        <!-- confetti canvas -->
         <canvas id="confettiCanvas"></canvas>
 
-        <!-- end-of-game overlay -->
         <div id="stats" class="overlay hidden">
           <div class="modal">
-            <h2>🎉 You Win! 🎉</h2>
             <p>Moves: <span id="finalMoves">0</span></p>
             <p>Time: <span id="finalTime">0</span>s</p>
             <button id="playAgain">Play Again</button>

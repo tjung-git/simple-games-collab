@@ -1,4 +1,3 @@
-/* NAVBAR */
 nav {
   width: 100%;
   background: #333;
@@ -23,7 +22,10 @@ nav a.active {
   background: #555;
 }
 
-/* MAIN LAYOUT */
+main {
+  padding: 2em 4em;
+}
+
 body {
   margin: 0;
   font-family: sans-serif;
@@ -35,52 +37,6 @@ main {
   height: calc(100vh - 50px);
 }
 
-/*!* GAME CONTAINER *!*/
-/*#game-container {*/
-/*  display: none;*/
-/*  width: 100%;*/
-/*  height: 100%;*/
-/*}*/
-/*#menu,*/
-/*#stats {*/
-/*  position: absolute;*/
-/*  top: 50%;*/
-/*  left: 50%;*/
-/*  transform: translate(-50%, -50%);*/
-/*}*/
-/*#game {*/
-/*  display: none;*/
-/*  background: #000;*/
-/*  border: 2px solid #555;*/
-/*  margin: auto;*/
-/*  cursor: none; !* hide OS cursor *!*/
-/*}*/
-
-/*!* TRACKING CONTAINER *!*/
-/*#tracking-container {*/
-/*  display: none;*/
-/*  width: 100%;*/
-/*  height: 100%;*/
-/*}*/
-/*#tracking-menu {*/
-/*  position: absolute;*/
-/*  top: 50%;*/
-/*  left: 50%;*/
-/*  transform: translate(-50%, -50%);*/
-/*}*/
-/*#tracking-canvas {*/
-/*  display: none;*/
-/*  background: #000;*/
-/*  border: 2px solid #555;*/
-/*  margin: auto;*/
-/*}*/
-/*#tracking-ui {*/
-/*  display: none;*/
-/*  text-align: center;*/
-/*  margin-top: 0.5rem;*/
-/*}*/
-
-/* PROFILE CONTAINER */
 #profile-container {
   display: none;
   padding: 2rem;
@@ -100,9 +56,69 @@ main {
   margin-top: 0.25rem;
 }
 
-/* BUTTONS */
 button {
   margin-top: 1rem;
   padding: 0.75rem 1.5rem;
   cursor: pointer;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;          
+  padding: 0;
+  list-style: none;
+}
+
+.game-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.game-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.game-card .maker {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0.25rem 0 0.75rem;
+}
+
+.game-card .btn {
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+.team-members {
+  display: flex;
+  justify-content: space-between;  
+  flex-wrap: wrap;                
+  gap: 2rem;                      
+  margin-top: 1.5rem;            
+}
+
+.team-member {
+  flex: 1 1 200px;                 
+  max-width: 220px;              
+  text-align: center;
+}
+
+.team-member img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 50%;           
+  margin-bottom: 0.75rem;
+}
+
+.team-member h3 {
+  margin: 0;
+  font-size: 1.1rem;
 }
