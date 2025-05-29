@@ -1,11 +1,7 @@
-// ——————————————————————————
 // Highlight Game 1 in navbar
-// ——————————————————————————
 document.getElementById("nav-game1").classList.add("active");
 
-// ——————————————————————————
 // DOM Elements
-// ——————————————————————————
 const gameContainer = document.getElementById("game-container");
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
@@ -15,25 +11,22 @@ const scoreEl = document.getElementById("score");
 const accEl = document.getElementById("acc");
 const restart = document.getElementById("restart");
 
-// ——————————————————————————
-// Show initial UI (override CSS hide)
-// ——————————————————————————
+// Show initial UI
 gameContainer.style.display = "block";
 menu.style.display = "block";
 canvas.style.display = "none";
 stats.style.display = "none";
 
-// ——————————————————————————
-// Settings & State
-// ——————————————————————————
+// Settings
 const settings = {
   easy: { spawnInterval: 1000, targetSize: 40, lifespan: 2000 },
   medium: { spawnInterval: 750, targetSize: 40, lifespan: 1000 },
   hard: { spawnInterval: 500, targetSize: 40, lifespan: 750 },
   hell: { spawnInterval: 250, targetSize: 40, lifespan: 500 },
 };
-const ROUND_DURATION = 30; // seconds
+const ROUND_DURATION = 30;
 
+// State
 let game = {
   state: "menu",
   difficulty: null,
@@ -47,17 +40,13 @@ let lastTime = 0;
 let spawnTimer = 0;
 let crosshair = { x: canvas.width / 2, y: canvas.height / 2 };
 
-// ——————————————————————————
 // Input Scaling
-// ——————————————————————————
 function getScaledMovement(dx, dy) {
   const vs = parseFloat(localStorage.getItem("sensValorant") || "1");
   return { dx: dx * vs, dy: dy * vs };
 }
 
-// ——————————————————————————
 // Pointer Lock
-// ——————————————————————————
 function onPointerLockChange() {
   if (document.pointerLockElement === canvas) {
     document.addEventListener("mousemove", onMouseMove);
@@ -72,12 +61,8 @@ function onMouseMove(e) {
 }
 document.addEventListener("pointerlockchange", onPointerLockChange);
 
-// ——————————————————————————
-// Game Lifecycle
-// ——————————————————————————
+// Game start
 function startGame(diff) {
-  console.log("🔫 startGame()", diff);
-
   if (!localStorage.getItem("sensValorant")) {
     alert(
       "Please configure your mouse sensitivity multiplier in Profile first."
@@ -113,7 +98,6 @@ function endGame() {
   game.state = "over";
   document.exitPointerLock();
 
-  // hide canvas, show stats
   canvas.style.display = "none";
   stats.style.display = "block";
 
@@ -126,9 +110,7 @@ function endGame() {
   if (game.score > curHigh) localStorage.setItem("highscore", game.score);
 }
 
-// ——————————————————————————
 // Target Management
-// ——————————————————————————
 function spawnTarget() {
   const { targetSize, lifespan } = settings[game.difficulty];
   const x = Math.random() * (canvas.width - 2 * targetSize) + targetSize;
@@ -191,9 +173,7 @@ function render() {
   ctx.fillText(`Score: ${game.score}`, 10, 40);
 }
 
-// ——————————————————————————
 // Shooting
-// ——————————————————————————
 canvas.addEventListener("mousedown", (e) => {
   if (game.state !== "playing" || e.button !== 0) return;
   game.shots++;
@@ -210,9 +190,7 @@ canvas.addEventListener("mousedown", (e) => {
   }
 });
 
-// ——————————————————————————
 // Main Loop & Controls
-// ——————————————————————————
 function loop(ts) {
   const dt = (ts - lastTime) / 1000;
   lastTime = ts;
