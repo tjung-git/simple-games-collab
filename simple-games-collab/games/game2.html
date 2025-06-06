@@ -50,23 +50,28 @@
               in on the correct answer before your guesses run out.
             </p>
           </section>
+
           <p id="instructions" data-default="Guess a number between 1-{max}:">
             Guess a number between 1-100:
           </p>
-          <div class="input-group">
-            <label for="guess-input">Enter your guess</label>
-            <input
-              type="number"
-              id="guess-input"
-              name="guess-input"
-              min="1"
-              max="100"
-              required
-              class="guess-input"
-            />
-            <span id="input-error" class="error-message"></span>
-          </div>
-          <button id="submit-guess">Submit Guess</button>
+
+          <form class="guess-form">
+            <div class="input-group">
+              <label for="guess-input">Enter your guess</label>
+              <input
+                type="number"
+                id="guess-input"
+                name="guess-input"
+                min="1"
+                max="100"
+                required
+                class="guess-input"
+              />
+              <span id="input-error" class="error-message"></span>
+            </div>
+            
+            <button id="submit-guess">Submit Guess</button>
+          </form>
 
           <div id="feedback">
             <p id="message"></p>
