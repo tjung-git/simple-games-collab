@@ -1,71 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Number Guessing Game - Simple Games</title>
-</head>
-<body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="../index.html" id="nav-home">Home</a></li>
-        <li><a href="../about.html" id="nav-about">About</a></li>
-        <li><a href="../games/game1.html" id="nav-game1">Aim Trainer</a></li>
-        <li><a href="../games/game2.html" id="nav-game2">Guess A Number</a></li>
-        <li><a href="../games/game3.html" id="nav-game3">Memory Match Game</a></li>
-        <li><a href="../contact.html" id="nav-contact">Contact</a></li>
-        <li><a href="../settings/profile.html" id="nav-profile">Profile</a></li>
-      </ul>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number Guessing Game - Simple Games</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="../index.html" id="nav-home">Home</a></li>
+          <li><a href="../about.html" id="nav-about">About</a></li>
+          <li><a href="../games/game1.html" id="nav-game1">Aim Trainer</a></li>
+          <li>
+            <a href="../games/game2.html" id="nav-game2">Guess A Number</a>
+          </li>
+          <li>
+            <a href="../games/game3.html" id="nav-game3">Memory Match Game</a>
+          </li>
+          <li><a href="../contact.html" id="nav-contact">Contact</a></li>
+          <li>
+            <a href="../settings/profile.html" id="nav-profile">Profile</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-  <main>
-    <section class="game-container">
-      <h1>Number Guessing Game</h1>
-      
-      <div class="game-controls">
-        <select id="difficulty">
-          <option value="25">Easy (1-25)</option>
-          <option value="100" selected>Medium (1-100)</option>
-          <option value="500">Hard (1-500)</option>
-        </select>
-        <button id="start-btn">New Game</button>
-      </div>
+    <main>
+      <section class="game-container">
+        <h1>Number Guessing Game</h1>
 
-      <div class="game-area">
-        <section id="objective">
-          <h2>Objective &amp; How to Play</h2>
-          <p>
-            Choose a difficulty, then try to guess the hidden number in as few
-            attempts as possible. After each guess, the game will tell you
-            whether your number is too high or too low—use these clues to zero
-            in on the correct answer before your guesses run out.
+        <div class="game-controls">
+          <select id="difficulty">
+            <option value="25">Easy (1-25)</option>
+            <option value="100" selected>Medium (1-100)</option>
+            <option value="500">Hard (1-500)</option>
+          </select>
+          <button id="start-btn">New Game</button>
+        </div>
+
+        <div class="game-area">
+          <section id="objective">
+            <h2>Objective &amp; How to Play</h2>
+            <p>
+              Choose a difficulty, then try to guess the hidden number in as few
+              attempts as possible. After each guess, the game will tell you
+              whether your number is too high or too low—use these clues to zero
+              in on the correct answer before your guesses run out.
+            </p>
+          </section>
+          <p id="instructions" data-default="Guess a number between 1-{max}:">
+            Guess a number between 1-100:
           </p>
-        </section>
-        <p id="instructions" data-default="Guess a number between 1-{max}:">
-          Guess a number between 1-100:
-        </p>
-        <div class="input-group">
-          <label for="guess-input">Enter your guess</label>
-          <input type="number" id="guess-input" name="guess-input" min="1" max="100" required class="guess-input">
-          <span id="input-error" class="error-message"></span>
-        </div>
-        <button id="submit-guess">Submit Guess</button>
-        
-        <div id="feedback">
-          <p id="message"></p>
-          <p id="attempts">Attempts: 0</p>
-          <p id="score">Score: 0</p>
-          <p id="high-score">High Score: 0</p>
-          <ul id="guess-history"></ul>
-        </div>
-      </div>
-    </section>
-  </main>
+          <div class="input-group">
+            <label for="guess-input">Enter your guess</label>
+            <input
+              type="number"
+              id="guess-input"
+              name="guess-input"
+              min="1"
+              max="100"
+              required
+              class="guess-input"
+            />
+            <span id="input-error" class="error-message"></span>
+          </div>
+          <button id="submit-guess">Submit Guess</button>
 
-  <footer>
-    <p>&copy; 2025 Simple Games Gang</p>
-  </footer>
-</body>
+          <div id="feedback">
+            <p id="message"></p>
+            <p id="attempts">Attempts: 0</p>
+            <p id="score">Score: 0</p>
+            <p id="high-score">High Score: 0</p>
+            <ul id="guess-history"></ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Simple Games Gang</p>
+    </footer>
+  </body>
 </html>
