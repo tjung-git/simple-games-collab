@@ -42,7 +42,7 @@
             </p>
           </section>
           <label for="difficulty">Difficulty:</label>
-          <select id="difficulty">
+          <select id="difficulty" title="Select game difficulty level" tabindex="0" aria-label="Game difficulty">
             <option value="16" selected>Normal (4×4)</option>
             <option value="36">Hard (6×6)</option>
           </select>
@@ -53,18 +53,18 @@
             <span id="moves">Moves: 0</span>
             <span id="timer">Time: 0s</span>
           </div>
-          <button id="resetBtn">Restart</button>
+          <button id="resetBtn" title="Restart current game" tabindex="0" aria-label="Restart game">Restart</button>
         </div>
 
-        <div id="grid" class="grid"></div>
+        <div id="grid" class="grid" role="application" aria-label="Memory match game board" tabindex="0"></div>
 
         <canvas id="confettiCanvas"></canvas>
 
-        <div id="stats" class="overlay hidden">
+        <div id="stats" class="overlay hidden" aria-live="polite" aria-label="Game results">
           <div class="modal">
             <p>Moves: <span id="finalMoves">0</span></p>
             <p>Time: <span id="finalTime">0</span>s</p>
-            <button id="playAgain">Play Again</button>
+            <button id="playAgain" title="Play another game" tabindex="0" aria-label="Play again">Play Again</button>
           </div>
         </div>
       </div>

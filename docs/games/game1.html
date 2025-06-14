@@ -41,17 +41,20 @@
               pinpoint accuracy.
             </p>
           </section>
-          <button data-diff="easy">Easy</button>
-          <button data-diff="medium">Medium</button>
-          <button data-diff="hard">Hard</button>
-          <button data-diff="hell">Hell</button>
+          <button data-diff="easy" title="Easy difficulty - slower speed" tabindex="0">Easy</button>
+          <button data-diff="medium" title="Medium difficulty - normal speed" tabindex="0">Medium</button>
+          <button data-diff="hard" title="Hard difficulty - faster speed" tabindex="0">Hard</button>
+          <button data-diff="hell" title="Extreme difficulty - very fast" tabindex="0">Hell</button>
         </div>
-        <canvas id="game" width="800" height="600"></canvas>
-        <div id="stats">
+        <canvas id="game" width="800" height="600"
+                aria-label="Aim training game area"
+                role="application"
+                tabindex="0"></canvas>
+        <div id="stats" aria-live="polite" aria-atomic="true">
           <h2>Game Over</h2>
           <p>Score: <span id="score">0</span></p>
           <p>Accuracy: <span id="acc">0%</span></p>
-          <button id="restart">Play Again</button>
+          <button id="restart" title="Restart the game" tabindex="0">Play Again</button>
         </div>
       </div>
     </main>
