@@ -29,9 +29,10 @@
     </header>
 
     <main>
-      <div class="game-container">
-        <div id="menu">
+      <div class="game-container" id="game-container">
+        <div id="game-menu">
           <h1>Memory Match</h1>
+
           <section id="objective">
             <h2>Objective &amp; How to Play</h2>
             <p>
@@ -41,6 +42,7 @@
               in the fewest moves and shortest time to achieve the best score!
             </p>
           </section>
+
           <label for="difficulty">Difficulty:</label>
           <select id="difficulty">
             <option value="16" selected>Normal (4×4)</option>
@@ -53,18 +55,18 @@
             <span id="moves">Moves: 0</span>
             <span id="timer">Time: 0s</span>
           </div>
-          <button id="resetBtn">Restart</button>
+          <button id="reset-btn">Restart</button>
         </div>
 
-        <div id="grid" class="grid"></div>
+        <div id="game-grid" class="grid"></div>
 
-        <canvas id="confettiCanvas"></canvas>
+        <canvas id="confetti-canvas"></canvas>
 
-        <div id="stats" class="overlay hidden">
+        <div id="game-stats" class="overlay hidden">
           <div class="modal">
-            <p>Moves: <span id="finalMoves">0</span></p>
-            <p>Time: <span id="finalTime">0</span>s</p>
-            <button id="playAgain">Play Again</button>
+            <p>Moves: <span id="final-moves">0</span></p>
+            <p>Time: <span id="final-time">0</span>s</p>
+            <button id="play-again">Play Again</button>
           </div>
         </div>
       </div>
