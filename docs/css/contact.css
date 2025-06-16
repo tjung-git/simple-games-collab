@@ -1,8 +1,6 @@
 .contact {
   max-width: 600px;
-  margin: 2em auto;
-  padding: 2em;
-
+  margin:auto;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
@@ -83,4 +81,37 @@ button[type="submit"]:hover {
 
 .hidden {
   display: none !important;
+}
+
+.radio-group {
+  display: flex;
+  gap: 2em;
+  margin: 1.5em 0;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  cursor: pointer;
+}
+
+.radio-group input[type="radio"] {
+  margin: 0;
+  width: auto;
+}
+
+.checkbox-label {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 0.5em;
+  cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+  vertical-align: text-bottom;
+  margin: 0;
+  width: auto;
+  height: 1.2em;
 }
