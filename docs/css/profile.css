@@ -2,7 +2,7 @@
   max-width: 600px;
   margin: auto;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 .profile h1 {
   text-align: center;
@@ -19,6 +19,22 @@
   font-weight: bold;
 }
 
-.form-group label span {
-  color: #e63946;
+#profile-form {
+  display: inline-block;
+  text-align: left;
+}
+#profile-form label {
+  display: block;
+  margin: 0.5rem 0;
+}
+#profile-form input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
 }

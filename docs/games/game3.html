@@ -4,10 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Memory Match Game - Simple Games</title>
+    <!-- Global site styles -->
     <link rel="stylesheet" href="../css/styles.css" />
+    <!-- Game-specific styles -->
     <link rel="stylesheet" href="../css/game3.css" />
   </head>
   <body>
+    <!-- Site navigation -->
     <header>
       <nav aria-label="main nav">
         <ul>
@@ -29,9 +32,12 @@
     </header>
 
     <main>
-      <div class="game-container">
-        <div id="menu">
+      <!-- Main game wrapper -->
+      <div class="game-container" id="game-container">
+        <!-- Game menu: Shows title, Objective, and allows difficulty selector -->
+        <div id="game-menu">
           <h1>Memory Match</h1>
+
           <section id="objective">
             <h2>Objective &amp; How to Play</h2>
             <p>
@@ -41,6 +47,7 @@
               in the fewest moves and shortest time to achieve the best score!
             </p>
           </section>
+
           <label for="difficulty">Difficulty:</label>
           <select id="difficulty" title="Select game difficulty level" tabindex="0" aria-label="Game difficulty">
             <option value="16" selected>Normal (4×4)</option>
@@ -48,28 +55,136 @@
           </select>
         </div>
 
+        <!-- Stats display and restart control -->
         <div id="game-header">
           <div class="stats">
             <span id="moves">Moves: 0</span>
             <span id="timer">Time: 0s</span>
           </div>
-          <button id="reset-btn" title="Restart current game" tabindex="0" aria-label="Restart game">Restart</button>
+          <button id="reset-btn">Restart</button>
         </div>
+        <br />
 
-        <div id="grid" class="grid" role="application" aria-label="Memory match game board" tabindex="0"></div>
+        <!-- 
+        Static 4×4 Memory Match grid for Demo.
+        I manually include 16 cards here to demonstrate the layout in pure HTML/CSS.
+        In Phase 3, JavaScript will:
+          1. Listen to the “Difficulty” selector.
+          2. Toggle the class from 'grid-4' to 'grid-6'.
+          3. Generate, shuffle, and insert these cards dynamically.
+        -->
+        <!-- Phase 2: Static 4×4 demo. In Phase 3, JS will generate/shuffle these. -->
+        <div class="grid grid-4">
+          <div class="card">
+            <div class="card-inner">
+              <div class="card-face front">?</div>
+              <div class="card-face back">🍓</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-inner">
+              <div class="card-face front">?</div>
+              <div class="card-face back">🍍</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-inner">
+              <div class="card-face front">?</div>
+              <div class="card-face back">🍌</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-inner">
+              <div class="card-face front">?</div>
+              <div class="card-face back">🍇</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-inner">
+              <div class="card-face front">?</div>
+              <div class="card-face back">🍉</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-inner">
+              <div class="card-face front">?</div>
+              <div class="card-face back">🍎</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-inner">
+              <div class="card-face front">?</div>
+              <div class="card-face back">🥝</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-inner">
+              <div class="card-face front">?</div>
+              <div class="card-face back">🍒</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-inner">
+              <div class="card-face front">?</div>
+              <div class="card-face back">🍓</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-inner">
+              <div class="card-face front">?</div>
+              <div class="card-face back">🍍</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-inner">
+              <div class="card-face front">?</div>
+              <div class="card-face back">🍌</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-inner">
+              <div class="card-face front">?</div>
+              <div class="card-face back">🍇</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-inner">
+              <div class="card-face front">?</div>
+              <div class="card-face back">🍉</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-inner">
+              <div class="card-face front">?</div>
+              <div class="card-face back">🍎</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-inner">
+              <div class="card-face front">?</div>
+              <div class="card-face back">🥝</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-inner">
+              <div class="card-face front">?</div>
+              <div class="card-face back">🍒</div>
+            </div>
+          </div>
+        </div>
 
         <canvas id="confetti-canvas"></canvas>
 
-        <div id="stats" class="overlay hidden" aria-live="polite" aria-label="Game results">
+        <!-- Overlay shown when the game ends -->
+        <div id="game-stats" class="overlay hidden">
           <div class="modal">
             <p>Moves: <span id="final-moves">0</span></p>
             <p>Time: <span id="final-time">0</span>s</p>
-            <button id="play-again" title="Play another game" tabindex="0" aria-label="Play again">Play Again</button>
+            <button id="play-again">Play Again</button>
           </div>
         </div>
       </div>
     </main>
-
     <footer>
       <p>&copy; 2025 Simple Games Gang</p>
     </footer>
