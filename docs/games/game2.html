@@ -34,12 +34,12 @@
 
         <div class="game-controls">
           <label for="difficulty">Difficulty:</label>
-          <select id="difficulty">
+          <select id="difficulty" title="Select game difficulty level" tabindex="0">
             <option value="25">Easy (1-25)</option>
             <option value="100" selected>Medium (1-100)</option>
             <option value="500">Hard (1-500)</option>
           </select>
-          <button id="start-btn">New Game</button>
+          <button id="start-btn" title="Start new game" tabindex="0">New Game</button>
         </div>
 
         <div class="game-area">
@@ -57,7 +57,7 @@
             Guess a number between 1-100:
           </p>
 
-          <form class="guess-form">
+          <form class="guess-form" aria-live="polite">
             <div class="input-group">
               <label for="guess-input">Enter your guess</label>
               <input
@@ -68,14 +68,16 @@
                 max="100"
                 required
                 class="guess-input"
+                aria-describedby="instructions input-error"
+                tabindex="0"
               />
-              <span id="input-error" class="error-message"></span>
+              <span id="input-error" class="error-message" role="alert"></span>
             </div>
 
-            <button id="submit-guess">Submit Guess</button>
+            <button id="submit-guess" title="Submit your number guess" tabindex="0">Submit Guess</button>
           </form>
 
-          <div id="feedback">
+          <div id="feedback" aria-live="polite" aria-atomic="true">
             <p id="message"></p>
             <p id="attempts">Attempts: 0</p>
             <p id="score">Score: 0</p>

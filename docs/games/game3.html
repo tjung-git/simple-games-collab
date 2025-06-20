@@ -49,7 +49,7 @@
           </section>
 
           <label for="difficulty">Difficulty:</label>
-          <select id="difficulty">
+          <select id="difficulty" title="Select game difficulty level" tabindex="0" aria-label="Game difficulty">
             <option value="16" selected>Normal (4×4)</option>
             <option value="36">Hard (6×6)</option>
           </select>
@@ -75,112 +75,96 @@
         -->
         <!-- Phase 2: Static 4×4 demo. In Phase 3, JS will generate/shuffle these. -->
         <div class="grid grid-4">
-          <!-- Card 1 -->
           <div class="card">
             <div class="card-inner">
               <div class="card-face front">?</div>
               <div class="card-face back">🍓</div>
             </div>
           </div>
-          <!-- Card 2 -->
           <div class="card">
             <div class="card-inner">
               <div class="card-face front">?</div>
               <div class="card-face back">🍍</div>
             </div>
           </div>
-          <!-- Card 3 -->
           <div class="card">
             <div class="card-inner">
               <div class="card-face front">?</div>
               <div class="card-face back">🍌</div>
             </div>
           </div>
-          <!-- Card 4 -->
           <div class="card">
             <div class="card-inner">
               <div class="card-face front">?</div>
               <div class="card-face back">🍇</div>
             </div>
           </div>
-          <!-- Card 5 -->
           <div class="card">
             <div class="card-inner">
               <div class="card-face front">?</div>
               <div class="card-face back">🍉</div>
             </div>
           </div>
-          <!-- Card 6 -->
           <div class="card">
             <div class="card-inner">
               <div class="card-face front">?</div>
               <div class="card-face back">🍎</div>
             </div>
           </div>
-          <!-- Card 7 -->
           <div class="card">
             <div class="card-inner">
               <div class="card-face front">?</div>
               <div class="card-face back">🥝</div>
             </div>
           </div>
-          <!-- Card 8 -->
           <div class="card">
             <div class="card-inner">
               <div class="card-face front">?</div>
               <div class="card-face back">🍒</div>
             </div>
           </div>
-          <!-- Card 9 (pair of 🍓) -->
           <div class="card">
             <div class="card-inner">
               <div class="card-face front">?</div>
               <div class="card-face back">🍓</div>
             </div>
           </div>
-          <!-- Card 10 (pair of 🍍) -->
           <div class="card">
             <div class="card-inner">
               <div class="card-face front">?</div>
               <div class="card-face back">🍍</div>
             </div>
           </div>
-          <!-- Card 11 (pair of 🍌) -->
           <div class="card">
             <div class="card-inner">
               <div class="card-face front">?</div>
               <div class="card-face back">🍌</div>
             </div>
           </div>
-          <!-- Card 12 (pair of 🍇) -->
           <div class="card">
             <div class="card-inner">
               <div class="card-face front">?</div>
               <div class="card-face back">🍇</div>
             </div>
           </div>
-          <!-- Card 13 (pair of 🍉) -->
           <div class="card">
             <div class="card-inner">
               <div class="card-face front">?</div>
               <div class="card-face back">🍉</div>
             </div>
           </div>
-          <!-- Card 14 (pair of 🍎) -->
           <div class="card">
             <div class="card-inner">
               <div class="card-face front">?</div>
               <div class="card-face back">🍎</div>
             </div>
           </div>
-          <!-- Card 15 (pair of 🥝) -->
           <div class="card">
             <div class="card-inner">
               <div class="card-face front">?</div>
               <div class="card-face back">🥝</div>
             </div>
           </div>
-          <!-- Card 16 (pair of 🍒) -->
           <div class="card">
             <div class="card-inner">
               <div class="card-face front">?</div>
@@ -189,7 +173,6 @@
           </div>
         </div>
 
-        <!-- Canvas for confetti animation on win -->
         <canvas id="confetti-canvas"></canvas>
 
         <!-- Overlay shown when the game ends -->
@@ -202,8 +185,6 @@
         </div>
       </div>
     </main>
-
-    <!-- Site footer -->
     <footer>
       <p>&copy; 2025 Simple Games Gang</p>
     </footer>

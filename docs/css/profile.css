@@ -1,7 +1,6 @@
 .profile {
   max-width: 600px;
-  margin: 2em auto;
-  padding: 2em;
+  margin: auto;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
@@ -19,6 +18,7 @@
 .highscore-display span {
   font-weight: bold;
 }
+
 #profile-form {
   display: inline-block;
   text-align: left;
