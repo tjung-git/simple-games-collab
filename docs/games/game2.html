@@ -10,19 +10,28 @@
   <body>
     <header>
       <nav aria-label="main nav">
-        <ul>
-          <li><a href="../index.html" id="nav-home">Home</a></li>
-          <li><a href="../about.html" id="nav-about">About</a></li>
-          <li><a href="../games/game1.html" id="nav-game1">Aim Trainer</a></li>
+        <!-- visible on mobile, doesn't work until js is implemented. -->
+        <button
+          class="nav-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+        >
+          <span class="hamburger"></span>
+        </button>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="./index.html" id="nav-home">Home</a></li>
+          <li><a href="./about.html" id="nav-about">About</a></li>
+          <li><a href="./games/game1.html" id="nav-game1">Aim Trainer</a></li>
           <li>
-            <a href="../games/game2.html" id="nav-game2">Guess A Number</a>
+            <a href="./games/game2.html" id="nav-game2">Guess A Number</a>
           </li>
           <li>
-            <a href="../games/game3.html" id="nav-game3">Memory Match Game</a>
+            <a href="./games/game3.html" id="nav-game3">Memory Match Game</a>
           </li>
-          <li><a href="../contact.html" id="nav-contact">Contact</a></li>
+          <li><a href="./contact.html" id="nav-contact">Contact</a></li>
           <li>
-            <a href="../settings/profile.html" id="nav-profile">Profile</a>
+            <a href="./settings/profile.html" id="nav-profile">Profile</a>
           </li>
         </ul>
       </nav>
