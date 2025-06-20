@@ -1,124 +1,227 @@
-nav {
-  width: 100%;
-  background: #333;
-}
-nav ul {
-  display: flex;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-nav li {
-  flex: 1;
-}
-nav a {
-  display: block;
-  padding: 0.75rem 0;
-  text-align: center;
-  color: #fff;
-  text-decoration: none;
-}
-nav a.active {
-  background: #555;
-}
-
-main {
-  padding: 2em 4em;
-}
-
+/* reset html/body spacing */
+html,
 body {
+  height: 100%;
   margin: 0;
+}
+
+/* stack main and footer vertically */
+body {
+  display: flex;
+  flex-direction: column;
   font-family: sans-serif;
   background: #222;
   color: #fff;
 }
+
+/* let main grow to push footer down */
 main {
-  position: relative;
-  height: calc(100vh - 50px);
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-#profile-container {
-  display: none;
-  padding: 2rem;
-  text-align: center;
-}
-#profile-form {
-  display: inline-block;
-  text-align: left;
-}
-#profile-form label {
-  display: block;
-  margin: 0.5rem 0;
-}
-#profile-form input {
+/* navigation bar background */
+nav {
   width: 100%;
-  padding: 0.5rem;
-  margin-top: 0.25rem;
+  background: #333;
 }
 
-button {
-  margin-top: 1rem;
-  padding: 0.75rem 1.5rem;
-  cursor: pointer;
-}
-
-.game-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;          
+/* nav links in a row that wrap */
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.game-card {
-
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 1rem;
-  text-align: center;
+/* nav items share space equally */
+nav li {
+  flex: 1 1 auto;
+  min-width: 80px;
 }
 
+/* nav link appearance */
+nav a {
+  display: block;
+  padding: 12px 0;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* highlight active nav link */
+nav a.active {
+  background: #555;
+}
+
+/* arrange game cards in a centered flex grid */
+.game-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* each game card box */
+.game-card {
+  flex: 1 1 320px;
+  max-width: 400px;
+  background: #333;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+/* game card image sizing */
 .game-card img {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
   margin-bottom: 0.75rem;
 }
 
+/* game title spacing */
+.game-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+/* author text styling */
 .game-card .maker {
   font-size: 0.9rem;
-  color: #666;
-  margin: 0.25rem 0 0.75rem;
+  color: #bbb;
+  margin: 0 0 1rem;
 }
 
+/* author link styling */
+.game-card .maker a {
+  color: #f5f1ee;
+  font-weight: bold;
+  text-decoration: none;
+  position: relative;
+  transition: color 200ms ease, transform 200ms ease;
+}
+
+/* underline animation for author link */
+.game-card .maker a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: #f5f1ee;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 200ms ease;
+}
+
+/* author link hover effect */
+.game-card .maker a:hover {
+  color: #f39c12;
+  transform: scale(1.05);
+}
+.game-card .maker a:hover::after {
+  transform: scaleX(1);
+}
+
+/* play button styling */
 .game-card .btn {
   display: inline-block;
-  margin-top: 0.5rem;
+  padding: 10px 24px;
+  background: #f5f1ee;
+  color: #222;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 200ms ease, transform 200ms ease;
+  margin-top: auto;
 }
 
+/* play button hover */
+.game-card .btn:hover {
+  background: #f39c12;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* team members container */
 .team-members {
   display: flex;
-  justify-content: space-between;  
-  flex-wrap: wrap;                
-  gap: 2rem;                      
-  margin-top: 1.5rem;            
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 1.5rem;
 }
 
+/* single team member box */
 .team-member {
-  flex: 1 1 200px;                 
-  max-width: 220px;              
+  flex: 1 1 200px;
+  max-width: 220px;
   text-align: center;
 }
 
+/* team member image */
 .team-member img {
   width: 100%;
   height: auto;
   object-fit: cover;
-  border-radius: 50%;           
+  border-radius: 50%;
   margin-bottom: 0.75rem;
 }
 
+/* team member name */
 .team-member h3 {
   margin: 0;
   font-size: 1.1rem;
+}
+
+/* footer background and text */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+/* list of footer credits */
+.footer-credits {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  font-size: 12px;
+  color: #ccc;
+}
+
+/* spacing between credit items */
+.footer-credits li {
+  margin-bottom: 4px;
+}
+
+/* footer credit links */
+.footer-credits a {
+  color: #158ea9;
+}
+
+/* mobile layout adjustments */
+@media (max-width: 600px) {
+  .game-grid {
+    gap: 1rem;
+  }
+  .game-card {
+    flex: 1 1 100%;
+    max-width: 90%;
+  }
 }

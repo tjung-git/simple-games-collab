@@ -1,0 +1,103 @@
+/* Center the game container and set its maximum width */
+#game-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 20px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Use CSS grid for the cards, with a small gap between them */
+.grid {
+  display: grid;
+  gap: 8px;
+  width: 100%;
+  grid-auto-rows: 1fr;
+}
+
+/* Four columns for the easy layout */
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Six columns for the hard layout */
+.grid-6 {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+/* Prepare each card for a 3D flip */
+.card {
+  position: relative;
+  perspective: 600px;
+}
+
+/* Inner wrapper holds front and back faces */
+.card-inner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+/* Flip the card when hovered */
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Common styles for both faces */
+.card-face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 8px;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Front face shows question mark */
+.card-face.front {
+  background: #fafafa;
+  color: #333;
+}
+
+/* Back face shows the fruit emoji */
+.card-face.back {
+  background: #fff;
+  color: #333;
+  transform: rotateY(180deg);
+}
+
+/* Reduce emoji size on medium-small screens */
+@media (max-width: 500px) {
+  .card-face {
+    font-size: 50px;
+  }
+}
+
+/* Further reduce emoji on very small screens */
+@media (max-width: 400px) {
+  .card-face {
+    font-size: 30px;
+  }
+}
+
+/* Allow wider game container on tablets */
+@media (min-width: 600px) {
+  #game-container {
+    max-width: 700px;
+  }
+}
+
+/* Allow even wider container on large screens */
+@media (min-width: 900px) {
+  #game-container {
+    max-width: 800px;
+  }
+}
