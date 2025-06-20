@@ -25,10 +25,12 @@ main {
 nav {
   width: 100%;
   background: #333;
+  position: relative; /* for the toggle button */
 }
 
 /* nav links in a row that wrap */
-nav ul {
+nav ul,
+.nav-menu {
   display: flex;
   flex-wrap: wrap;
   margin: 0;
@@ -54,6 +56,37 @@ nav a {
 /* highlight active nav link */
 nav a.active {
   background: #555;
+}
+
+/* --- mobile nav --- */
+.nav-toggle {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 12px;
+  z-index: 10;
+}
+.nav-toggle .hamburger,
+.nav-toggle .hamburger::before,
+.nav-toggle .hamburger::after {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.nav-toggle .hamburger::before {
+  top: -7px;
+}
+.nav-toggle .hamburger::after {
+  top: 7px;
 }
 
 /* arrange game cards in a centered flex grid */
@@ -217,6 +250,46 @@ footer {
 
 /* mobile layout adjustments */
 @media (max-width: 600px) {
+  /* show the hamburger on small screens */
+  .nav-toggle {
+    display: block;
+  }
+
+  /* hide the menu by default */
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #333;
+    margin: 0;
+  }
+
+  /* when open, show it */
+  .nav-menu.open {
+    display: flex;
+  }
+
+  /* full-width nav items */
+  .nav-menu li {
+    flex: none;
+  }
+  .nav-menu a {
+    padding: 12px;
+    border-top: 1px solid #444;
+  }
+
+  /* animate hamburger into “X” */
+  .nav-toggle.open .hamburger {
+    background: transparent;
+  }
+  .nav-toggle.open .hamburger::before {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .nav-toggle.open .hamburger::after {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  /* existing game-grid adjustments */
   .game-grid {
     gap: 1rem;
   }
