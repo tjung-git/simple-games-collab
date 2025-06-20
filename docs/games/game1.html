@@ -41,25 +41,58 @@
               pinpoint accuracy.
             </p>
           </section>
-          <button data-diff="easy" title="Easy difficulty - slower speed" tabindex="0">Easy</button>
-          <button data-diff="medium" title="Medium difficulty - normal speed" tabindex="0">Medium</button>
-          <button data-diff="hard" title="Hard difficulty - faster speed" tabindex="0">Hard</button>
-          <button data-diff="hell" title="Extreme difficulty - very fast" tabindex="0">Hell</button>
+          <button
+            data-diff="easy"
+            title="Easy difficulty - slower speed"
+            tabindex="0"
+          >
+            Easy
+          </button>
+          <button
+            data-diff="medium"
+            title="Medium difficulty - normal speed"
+            tabindex="0"
+          >
+            Medium
+          </button>
+          <button
+            data-diff="hard"
+            title="Hard difficulty - faster speed"
+            tabindex="0"
+          >
+            Hard
+          </button>
+          <button
+            data-diff="hell"
+            title="Extreme difficulty - very fast"
+            tabindex="0"
+          >
+            Hell
+          </button>
         </div>
-        <canvas id="game" width="800" height="600"
-                aria-label="Aim training game area"
-                role="application"
-                tabindex="0"></canvas>
-        <div id="stats" aria-live="polite" aria-atomic="true">
+        <canvas
+          id="game"
+          width="800"
+          height="600"
+          aria-label="Aim training game area"
+          role="application"
+          tabindex="0"
+        ></canvas>
+
+        <!-- Below is commented out due to missing JS. Will add it back it in phase 3 -->
+        <!-- <div id="stats" aria-live="polite" aria-atomic="true">
           <h2>Game Over</h2>
           <p>Score: <span id="score">0</span></p>
           <p>Accuracy: <span id="acc">0%</span></p>
-          <button id="restart" title="Restart the game" tabindex="0">Play Again</button>
-        </div>
+          <button id="restart" title="Restart the game" tabindex="0">
+            Play Again
+          </button>
+        </div> -->
       </div>
     </main>
     <footer>
       <p>&copy; 2025 Simple Games Gang</p>
+      <p class="footer-credits">Graphics: none used</p>
     </footer>
   </body>
 </html>
