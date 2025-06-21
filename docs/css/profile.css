@@ -1,13 +1,3 @@
-:root {
-  --primary: #f39c12;
-  --primary-dark: #e67e22;
-  --secondary: #3498db;
-  --dark: #2c3e50;
-  --darker: #1a252f;
-  --light: #ecf0f1;
-  --error: #e63946;
-}
-
 .profile {
   max-width: 600px;
   margin: 2rem auto;
@@ -54,7 +44,8 @@
 }
 #profile-form input {
   width: 100%;
-  padding: 0.75rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
   margin-bottom: 1rem;
   background: rgba(255,255,255,0.1);
   border: 1px solid rgba(255,255,255,0.1);
@@ -69,8 +60,6 @@
 
 button {
   display: block;
-  width: 100%;
-  margin: 2rem auto 0;
   padding: 1rem;
   background: var(--primary);
   color: var(--darker);
@@ -90,5 +79,9 @@ button:hover {
   .profile {
     margin: 1rem;
     padding: 1.5rem;
+  }
+
+  #profile-form {
+    max-width: 100%;
   }
 }
