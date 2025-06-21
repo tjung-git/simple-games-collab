@@ -1,16 +1,130 @@
-/* Center the game container and set its maximum width */
+/* Game container styling */
 #game-container {
   width: 100%;
   max-width: 600px;
-  margin: 0 auto 20px;
-  padding: 20px;
+  margin: 2rem auto;
+  padding: 1.5rem;
   box-sizing: border-box;
+  background: var(--dark);
+  border-radius: 8px;
+}
+
+#game-menu h1 {
+  text-align: center;
+  margin: 0 0 2rem;
+  color: var(--light);
+  font-size: 2.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradientShift 8s ease infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+#objective {
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#objective h2 {
+  margin: 0 0 1rem;
+  color: var(--primary);
+  font-size: 1.5rem;
+}
+
+#objective p {
+  color: var(--light);
+  line-height: 1.6;
+}
+
+.game-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.game-area {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.game-controls label {
+  font-weight: bold;
+  color: var(--light);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.game-controls select {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: none;
+  background: rgba(0, 0, 0, 0.3);
+  color: var(--light);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.game-controls select:hover {
+  background: rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+.game-controls select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--primary);
+}
+
+/* Game controls */
+#difficulty {
+  background: var(--darker);
+  color: var(--light);
+  border: 1px solid var(--primary);
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border-radius: 4px;
+}
+
+button {
+  background: var(--primary);
+  color: var(--darker);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  margin: 0.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
 }
 
 /* Use CSS grid for the cards, with a small gap between them */
 .grid {
   display: grid;
-  gap: 8px;
+  gap: 1rem;
   width: 100%;
   grid-auto-rows: 1fr;
 }
@@ -46,7 +160,7 @@
 }
 
 /* Common styles for both faces */
-.card-face {
+.card-face-front, .card-face-back {
   position: absolute;
   top: 0;
   left: 0;
@@ -61,29 +175,38 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-/* Front face shows question mark */
-.card-face.front {
-  background: #fafafa;
-  color: #333;
+/* Card styling */
+.card-face-front {
+  background: var(--darker);
+  color: var(--light);
+  border: 2px solid var(--primary);
 }
 
-/* Back face shows the fruit emoji */
-.card-face.back {
-  background: #fff;
-  color: #333;
+.card-face-back {
+  background: var(--primary);
+  color: var(--darker);
   transform: rotateY(180deg);
+  border: 2px solid var(--primary-dark);
+}
+
+/* Score display */
+#score {
+  color: var(--light);
+  margin: 0.5rem 0;
+  text-align: center;
+  font-size: 1.2rem;
 }
 
 /* Reduce emoji size on medium-small screens */
 @media (max-width: 500px) {
-  .card-face {
+  .card-face-back,.card-face-front{
     font-size: 50px;
   }
 }
 
 /* Further reduce emoji on very small screens */
 @media (max-width: 400px) {
-  .card-face {
+  .card-face-back,.card-face-front {
     font-size: 30px;
   }
 }
@@ -99,5 +222,70 @@
 @media (min-width: 900px) {
   #game-container {
     max-width: 800px;
+  }
+}
+
+/* Overlay styling */
+.overlay-hidden {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.overlay-hidden.active {
+  display: flex;
+  opacity: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal h2 {
+  color: var(--primary);
+  margin-top: 0;
+  font-size: 1.8rem;
+}
+
+.modal p {
+  color: var(--light);
+  line-height: 1.6;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: var(--light);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.modal-close:hover {
+  color: var(--primary);
+}
+
+@media (max-width: 600px) {
+  .modal {
+    padding: 1.5rem;
   }
 }

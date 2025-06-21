@@ -62,9 +62,9 @@
             </p>
           </section>
 
-          <p id="instructions" data-default="Guess a number between 1-{max}:">
-            Guess a number between 1-100:
-          </p>
+          <div id="instructions" data-default="Guess a number between 1-{max}">
+            <p>Guess a number between <span class="number-range">1-100</span></p>
+          </div>
 
           <form class="guess-form" aria-live="polite">
             <div class="input-group">
@@ -100,5 +100,15 @@
     <footer>
       <p>&copy; 2025 Simple Games Gang</p>
     </footer>
+<!-- Game finisher overlay -->
+  <div id="game-stats" class="overlay-hidden" style="display: none;">
+    <div class="modal">
+      <h2>Game Complete!</h2>
+      <p>Attempts: <span id="final-attempts">0</span></p>
+      <p>Score: <span id="final-score">0</span></p>
+      <p>High Score: <span id="final-high-score">0</span></p>
+      <button id="play-again">Play Again</button>
+    </div>
+  </div>
   </body>
 </html>

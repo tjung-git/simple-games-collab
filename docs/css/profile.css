@@ -1,40 +1,94 @@
+:root {
+  --primary: #f39c12;
+  --primary-dark: #e67e22;
+  --secondary: #3498db;
+  --dark: #2c3e50;
+  --darker: #1a252f;
+  --light: #ecf0f1;
+  --error: #e63946;
+}
+
 .profile {
   max-width: 600px;
-  margin: auto;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--darker);
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  color: var(--light);
 }
+
 .profile h1 {
   text-align: center;
-  margin-bottom: 1.5em;
-  font-size: 2em;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: var(--primary);
 }
 
 .highscore-display {
   text-align: center;
-  margin-top: 1.5em;
-  font-size: 1.1rem;
+  margin: 2rem 0;
+  font-size: 1.2rem;
+  padding: 1rem;
+  background: rgba(0,0,0,0.2);
+  border-radius: 4px;
 }
 .highscore-display span {
   font-weight: bold;
+  color: var(--primary);
 }
 
 #profile-form {
-  display: inline-block;
-  text-align: left;
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
 }
 #profile-form label {
   display: block;
-  margin: 0.5rem 0;
+  margin: 1rem 0 0.5rem;
+  font-weight: 500;
+}
+#profile-form label span {
+  color: var(--error);
 }
 #profile-form input {
   width: 100%;
-  padding: 0.5rem;
-  margin-top: 0.25rem;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 4px;
+  color: var(--light);
+  font-size: 1rem;
+}
+#profile-form input:focus {
+  outline: none;
+  border-color: var(--primary);
 }
 
 button {
-  margin-top: 1rem;
-  padding: 0.75rem 1.5rem;
+  display: block;
+  width: 100%;
+  margin: 2rem auto 0;
+  padding: 1rem;
+  background: var(--primary);
+  color: var(--darker);
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .profile {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
 }

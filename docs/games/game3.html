@@ -57,11 +57,13 @@
             </p>
           </section>
 
-          <label for="difficulty">Difficulty:</label>
-          <select id="difficulty" title="Select game difficulty level" tabindex="0" aria-label="Game difficulty">
-            <option value="16" selected>Normal (4×4)</option>
-            <option value="36">Hard (6×6)</option>
-          </select>
+          <div class="game-controls">
+            <label for="difficulty">Difficulty:</label>
+            <select id="difficulty" title="Select game difficulty level" tabindex="0" aria-label="Game difficulty">
+              <option value="16" selected>Normal (4×4)</option>
+              <option value="36">Hard (6×6)</option>
+            </select>
+          </div>
         </div>
 
         <!-- Stats display and restart control -->
@@ -86,98 +88,98 @@
         <div class="grid grid-4">
           <div class="card">
             <div class="card-inner">
-              <div class="card-face front">?</div>
-              <div class="card-face back">🍓</div>
+              <div class="card-face-front">?</div>
+              <div class="card-face-back">🍓</div>
             </div>
           </div>
           <div class="card">
             <div class="card-inner">
-              <div class="card-face front">?</div>
-              <div class="card-face back">🍍</div>
+              <div class="card-face-front">?</div>
+              <div class="card-face-back">🍍</div>
             </div>
           </div>
           <div class="card">
             <div class="card-inner">
-              <div class="card-face front">?</div>
-              <div class="card-face back">🍌</div>
+              <div class="card-face-front">?</div>
+              <div class="card-face-back">🍌</div>
             </div>
           </div>
           <div class="card">
             <div class="card-inner">
-              <div class="card-face front">?</div>
-              <div class="card-face back">🍇</div>
+              <div class="card-face-front">?</div>
+              <div class="card-face-back">🍇</div>
             </div>
           </div>
           <div class="card">
             <div class="card-inner">
-              <div class="card-face front">?</div>
-              <div class="card-face back">🍉</div>
+              <div class="card-face-front">?</div>
+              <div class="card-face-back">🍉</div>
             </div>
           </div>
           <div class="card">
             <div class="card-inner">
-              <div class="card-face front">?</div>
-              <div class="card-face back">🍎</div>
+              <div class="card-face-front">?</div>
+              <div class="card-face-back">🍎</div>
             </div>
           </div>
           <div class="card">
             <div class="card-inner">
-              <div class="card-face front">?</div>
-              <div class="card-face back">🥝</div>
+              <div class="card-face-front">?</div>
+              <div class="card-face-back">🥝</div>
             </div>
           </div>
           <div class="card">
             <div class="card-inner">
-              <div class="card-face front">?</div>
-              <div class="card-face back">🍒</div>
+              <div class="card-face-front">?</div>
+              <div class="card-face-back">🍒</div>
             </div>
           </div>
           <div class="card">
             <div class="card-inner">
-              <div class="card-face front">?</div>
-              <div class="card-face back">🍓</div>
+              <div class="card-face-front">?</div>
+              <div class="card-face-back">🍓</div>
             </div>
           </div>
           <div class="card">
             <div class="card-inner">
-              <div class="card-face front">?</div>
-              <div class="card-face back">🍍</div>
+              <div class="card-face-front">?</div>
+              <div class="card-face-back">🍍</div>
             </div>
           </div>
           <div class="card">
             <div class="card-inner">
-              <div class="card-face front">?</div>
-              <div class="card-face back">🍌</div>
+              <div class="card-face-front">?</div>
+              <div class="card-face-back">🍌</div>
             </div>
           </div>
           <div class="card">
             <div class="card-inner">
-              <div class="card-face front">?</div>
-              <div class="card-face back">🍇</div>
+              <div class="card-face-front">?</div>
+              <div class="card-face-back">🍇</div>
             </div>
           </div>
           <div class="card">
             <div class="card-inner">
-              <div class="card-face front">?</div>
-              <div class="card-face back">🍉</div>
+              <div class="card-face-front">?</div>
+              <div class="card-face-back">🍉</div>
             </div>
           </div>
           <div class="card">
             <div class="card-inner">
-              <div class="card-face front">?</div>
-              <div class="card-face back">🍎</div>
+              <div class="card-face-front">?</div>
+              <div class="card-face-back">🍎</div>
             </div>
           </div>
           <div class="card">
             <div class="card-inner">
-              <div class="card-face front">?</div>
-              <div class="card-face back">🥝</div>
+              <div class="card-face-front">?</div>
+              <div class="card-face-back">🥝</div>
             </div>
           </div>
           <div class="card">
             <div class="card-inner">
-              <div class="card-face front">?</div>
-              <div class="card-face back">🍒</div>
+              <div class="card-face-front">?</div>
+              <div class="card-face-back">🍒</div>
             </div>
           </div>
         </div>
@@ -185,7 +187,7 @@
         <canvas id="confetti-canvas"></canvas>
 
         <!-- Overlay shown when the game ends -->
-        <div id="game-stats" class="overlay hidden">
+        <div id="game-stats" class="overlay-hidden" style="display: none;">
           <div class="modal">
             <p>Moves: <span id="final-moves">0</span></p>
             <p>Time: <span id="final-time">0</span>s</p>

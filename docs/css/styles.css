@@ -1,4 +1,15 @@
 /* reset html/body spacing */
+
+:root {
+  --primary: #f39c12;
+  --primary-dark: #e67e22;
+  --secondary: #3498db;
+  --dark: #2c3e50;
+  --darker: #1a252f;
+  --light: #ecf0f1;
+  --error: #e63946;
+}
+
 html,
 body {
   height: 100%;
@@ -24,8 +35,58 @@ main {
 /* navigation bar background */
 nav {
   width: 100%;
-  background: #333;
+  background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
   position: relative; /* for the toggle button */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* hero section styling */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, var(--dark) 0%, var(--darker) 100%);
+  border-radius: 8px;
+  margin: auto;
+  max-width: 1200px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  padding-bottom: 3rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--light);
+  opacity: 0.9;
+}
+
+/* about page content styling */
+.about {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about h1 {
+  color: var(--primary);
+  text-align: center;
+}
+
+.about article {
+  background: #333;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 3rem;
+}
+
+.about article h2 {
+  color: var(--primary);
+  margin-top: 0;
 }
 
 /* nav links in a row that wrap */
@@ -42,20 +103,60 @@ nav ul,
 nav li {
   flex: 1 1 auto;
   min-width: 80px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* add separator between nav items */
+nav li:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 25%;
+  height: 50%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 /* nav link appearance */
 nav a {
   display: block;
-  padding: 12px 0;
+  padding: 16px 0;
   text-align: center;
-  color: #fff;
+  color: var(--light);
   text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* nav link hover effect */
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background: var(--primary);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+nav a:hover::after {
+  width: 80%;
 }
 
 /* highlight active nav link */
 nav a.active {
-  background: #555;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+nav a.active::after {
+  width: 80%;
+  background: var(--secondary);
 }
 
 /* --- mobile nav --- */
@@ -105,14 +206,18 @@ nav a.active {
 .game-card {
   flex: 1 1 320px;
   max-width: 400px;
-  background: #333;
-  color: #fff;
+  background: linear-gradient(135deg, var(--dark) 0%, var(--darker) 100%);
+  color: var(--primary);
   border: 1px solid #444;
   border-radius: 6px;
   padding: 1.5rem;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+}
+
+.game-short-intro {
+  color: whitesmoke
 }
 
 /* game card image sizing */
@@ -190,11 +295,11 @@ nav a.active {
 
 /* team members container */
 .team-members {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
   margin-top: 1.5rem;
+  justify-items: center;
 }
 
 /* single team member box */
@@ -250,6 +355,25 @@ footer {
 
 /* mobile layout adjustments */
 @media (max-width: 600px) {
+  .hero {
+    margin: 2rem 1rem;
+  }
+  
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+  
+  .about article {
+    padding: 1.5rem;
+  }
+  
+  .team-members {
+    grid-template-columns: 1fr;
+  }
   /* show the hamburger on small screens */
   .nav-toggle {
     display: block;
@@ -260,12 +384,12 @@ footer {
     display: none;
     flex-direction: column;
     width: 100%;
-    background: #333;
+    background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
     margin: 0;
   }
 
-  /* when open, show it */
-  .nav-menu.open {
+  /* show menu when nav has focus */
+  nav:focus-within .nav-menu {
     display: flex;
   }
 
@@ -278,14 +402,14 @@ footer {
     border-top: 1px solid #444;
   }
 
-  /* animate hamburger into “X” */
-  .nav-toggle.open .hamburger {
+  /* animate hamburger when menu is shown */
+  nav:focus-within .nav-toggle .hamburger {
     background: transparent;
   }
-  .nav-toggle.open .hamburger::before {
+  nav:focus-within .nav-toggle .hamburger::before {
     transform: rotate(45deg) translate(5px, 5px);
   }
-  .nav-toggle.open .hamburger::after {
+  nav:focus-within .nav-toggle .hamburger::after {
     transform: rotate(-45deg) translate(5px, -5px);
   }
 
