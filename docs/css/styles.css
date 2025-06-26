@@ -44,7 +44,7 @@ nav {
 /* banner section styling */
 .banner {
   text-align: center;
-  padding: 4rem 2rem;
+  padding: 0.5rem 2rem 3rem 2rem;
   background: linear-gradient(135deg, var(--dark) 0%, var(--darker) 100%);
   border-radius: 8px;
   margin: auto;
@@ -67,6 +67,9 @@ nav {
 }
 
 /* about page content styling */
+.author {
+  color: lightsteelblue !important;
+}
 .about {
   max-width: 1200px;
   margin: 0 auto;
