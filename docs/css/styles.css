@@ -41,8 +41,8 @@ nav {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* hero section styling */
-.hero {
+/* banner section styling */
+.banner {
   text-align: center;
   padding: 4rem 2rem;
   background: linear-gradient(135deg, var(--dark) 0%, var(--darker) 100%);
@@ -51,14 +51,14 @@ nav {
   max-width: 1200px;
 }
 
-.hero h1 {
+.banner h1 {
   font-size: 2.5rem;
   padding-bottom: 3rem;
   margin-bottom: 1rem;
   color: var(--primary);
 }
 
-.hero p {
+.banner p {
   font-size: 1.2rem;
   max-width: 800px;
   margin: 0 auto;
@@ -355,15 +355,15 @@ footer {
 
 /* mobile layout adjustments */
 @media (max-width: 600px) {
-  .hero {
+  .banner {
     margin: 2rem 1rem;
   }
   
-  .hero h1 {
+  .banner h1 {
     font-size: 1.8rem;
   }
   
-  .hero p {
+  .banner p {
     font-size: 1rem;
   }
   
