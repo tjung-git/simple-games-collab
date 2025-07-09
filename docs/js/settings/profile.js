@@ -3,7 +3,9 @@ document.getElementById('nav-profile').classList.add('active');
 const form       = document.getElementById('profile-form');
 const userIn     = document.getElementById('username');
 const sensIn     = document.getElementById('sensValorant');
-const hsSpan     = document.getElementById('highscore');
+const hsAimEl     = document.getElementById('highscore-aim');
+const hsGuessEl   = document.getElementById('highscore-guess');
+const hsMemoryEl  = document.getElementById('highscore-memory');
 
 function loadProfile() {
   userIn.value   = localStorage.getItem('username')      || '';
