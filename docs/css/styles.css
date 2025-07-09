@@ -112,7 +112,7 @@ nav li {
 
 /* add separator between nav items */
 nav li:not(:last-child)::after {
-  content: '';
+  content: "";
   position: absolute;
   right: 0;
   top: 25%;
@@ -136,7 +136,7 @@ nav a {
 
 /* nav link hover effect */
 nav a::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -193,6 +193,17 @@ nav a.active::after {
   top: 7px;
 }
 
+/* turn the three bars into an “X” when the toggle has .open */
+.nav-toggle.open .hamburger {
+  background: transparent;
+}
+.nav-toggle.open .hamburger::before {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.nav-toggle.open .hamburger::after {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
 /* arrange game cards in a centered flex grid */
 .game-grid {
   display: flex;
@@ -220,7 +231,7 @@ nav a.active::after {
 }
 
 .game-short-intro {
-  color: whitesmoke
+  color: whitesmoke;
 }
 
 /* game card image sizing */
@@ -391,29 +402,9 @@ footer {
     margin: 0;
   }
 
-  /* show menu when nav has focus */
-  nav:focus-within .nav-menu {
+  /* show menu when .open on the <ul> */
+  .nav-menu.open {
     display: flex;
-  }
-
-  /* full-width nav items */
-  .nav-menu li {
-    flex: none;
-  }
-  .nav-menu a {
-    padding: 12px;
-    border-top: 1px solid #444;
-  }
-
-  /* animate hamburger when menu is shown */
-  nav:focus-within .nav-toggle .hamburger {
-    background: transparent;
-  }
-  nav:focus-within .nav-toggle .hamburger::before {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-  nav:focus-within .nav-toggle .hamburger::after {
-    transform: rotate(-45deg) translate(5px, -5px);
   }
 
   /* existing game-grid adjustments */
