@@ -10,7 +10,6 @@
   <body>
     <header>
       <nav aria-label="main nav">
-        <!-- visible on mobile, doesn't work until js is implemented. -->
         <button
           class="nav-toggle"
           aria-label="Toggle navigation"
@@ -38,10 +37,10 @@
     </header>
 
     <main>
-      <div id="game-container">
-        <div id="menu">
+      <div id="game-container-game1">
+        <div id="menu-game1">
           <h1>Aim Trainer</h1>
-          <section id="objective">
+          <section id="objective-game1">
             <h2>Objective &amp; How to Play</h2>
             <p>
               Boost your reaction speed and accuracy by clicking targets as soon
@@ -80,7 +79,7 @@
           </button>
         </div>
         <canvas
-          id="game"
+          id="game-game1"
           width="800"
           height="600"
           aria-label="Aim training game area"
@@ -89,19 +88,21 @@
         ></canvas>
 
         <!-- Below is commented out due to missing JS. Will add it back it in phase 3 -->
-        <!-- <div id="stats" aria-live="polite" aria-atomic="true">
+        <div id="stats-game1" aria-live="polite" aria-atomic="true">
           <h2>Game Over</h2>
-          <p>Score: <span id="score">0</span></p>
-          <p>Accuracy: <span id="acc">0%</span></p>
-          <button id="restart" title="Restart the game" tabindex="0">
+          <p>Score: <span id="score-game1">0</span></p>
+          <p>Accuracy: <span id="acc-game1">0%</span></p>
+          <button id="restart-game1" title="Restart the game" tabindex="0">
             Play Again
           </button>
-        </div> -->
+        </div>
       </div>
     </main>
     <footer>
       <p>&copy; 2025 Simple Games Gang</p>
       <p class="footer-credits">Graphics: none used</p>
     </footer>
+    <script src="../js/games/game1.js"></script>
+    <script src="../js/nav.js"></script>
   </body>
 </html>
