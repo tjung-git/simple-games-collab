@@ -3,14 +3,14 @@ const navGame1 = document.getElementById("nav-game1");
 navGame1?.classList.add("active");
 
 // DOM Elements & Containers
-const gameContainer = document.getElementById("game-container");
-const canvas        = document.getElementById("game");
+const gameContainer = document.getElementById("game-container-game1");
+const canvas        = document.getElementById("game-game1");
 const ctx           = canvas.getContext("2d");
-const menu          = document.getElementById("menu");
-const stats         = document.getElementById("stats");
-const scoreEl       = document.getElementById("score");
-const accEl         = document.getElementById("acc");
-const restart       = document.getElementById("restart");
+const menu          = document.getElementById("menu-game1");
+const stats         = document.getElementById("stats-game1");
+const scoreEl       = document.getElementById("score-game1");
+const accEl         = document.getElementById("acc-game1");
+const restart       = document.getElementById("restart-game1");
 
 // INITIAL UI STATE
 gameContainer.style.display = "block";
@@ -101,7 +101,7 @@ function endGame() {
   accEl.textContent   = `${acc}%`;
 
   // update high score
-  const curHigh = parseInt(localStorage.getItem('highscore') || '0', 10);
+  const curHigh = parseInt(localStorage.getItem('highscore-aim') || '0', 10);
   if (game.score > curHigh) {
     localStorage.setItem('highscore-aim', game.score);
   }
@@ -188,7 +188,7 @@ function loop(ts) {
   if (game.state === 'playing') requestAnimationFrame(loop);
 }
 
-document.querySelectorAll('#menu button').forEach(btn =>
+document.querySelectorAll('#menu-game1 button').forEach(btn =>
   btn.addEventListener('click', () => startGame(btn.dataset.diff))
 );
 restart.addEventListener('click', () => startGame(game.difficulty));
