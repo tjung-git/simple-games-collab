@@ -39,7 +39,21 @@
     <main>
       <section class="profile">
         <h1>Your Profile</h1>
-        <form id="profile-form" novalidate>
+        
+        <!-- Profile Display Section -->
+        <div id="profile-display" class="profile-display">
+          <div class="profile-header">
+            <div class="profile-photo-container">
+              <img id="profile-photo" src="" alt="Profile Photo" />
+            </div>
+            <div class="profile-info">
+              <h2 id="display-username">Username</h2>
+              <p>Sensitivity: <span id="display-sensitivity">0.45</span></p>
+            </div>
+          </div>
+        </div>
+        
+        <form id="profile-form">
           <div class="form-group">
             <label for="username">Username <span>*</span>:</label>
             <input
@@ -71,11 +85,17 @@
               placeholder="e.g. 0.45"
               required
               min="0.01"
+              max="10"
+              title="Enter a value between 0.01 and 10. Lower values make cursor movement slower, higher values make it faster."
             />
             <small class="error-message"></small>
+            <small class="help-text">Recommended range: 0.1 - 4.0</small>
           </div>
 
-          <button type="submit">Save Profile</button>
+          <div class="button-group">
+            <button type="submit" class="save-btn">Save Profile</button>
+            <button type="button" id="reset-profile" class="reset-btn">Reset Profile</button>
+          </div>
         </form>
 
         <p class="highscore-display">
