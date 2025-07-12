@@ -7,6 +7,7 @@ const sensIn = document.getElementById('sensValorant');
 const hsAimEl = document.getElementById('highscore-aim');
 const hsGuessEl = document.getElementById('highscore-guess');
 const hsMemoryEl = document.getElementById('highscore-memory');
+const resetButton = document.getElementById('reset-profile');
 
 // Profile display elements
 const displayUsername = document.getElementById('display-username');
@@ -38,9 +39,41 @@ function loadProfile() {
   
   // Get game2 high score from localStorage
   const game2HighScore = localStorage.getItem('game2-high-score') || '0';
-  hsGuessEl.textContent = game2HighScoree;
+  hsGuessEl.textContent = game2HighScore;
   
   hsMemoryEl.textContent = localStorage.getItem('highscore-memory') || '0';
+}
+
+// Reset profile data
+function resetProfile() {
+  // Ask for confirmation
+  const confirmReset = confirm("Are you sure you want to reset your profile? This will clear all your profile data and high scores.");
+  
+  if (confirmReset) {
+    // Clear profile data
+    localStorage.removeItem('username');
+    localStorage.removeItem('sensValorant');
+    localStorage.removeItem('profilePhoto');
+    
+    // Clear high scores
+    localStorage.removeItem('highscore-aim');
+    localStorage.removeItem('game2-high-score');
+    localStorage.removeItem('highscore-memory');
+    
+    // Reset form and display
+    userIn.value = '';
+    sensIn.value = '';
+    displayUsername.textContent = 'Username';
+    displaySensitivity.textContent = '0.45';
+    profilePhoto.src = DEFAULT_AVATAR;
+    
+    // Reset high score displays
+    hsAimEl.textContent = '0';
+    hsGuessEl.textContent = '0';
+    hsMemoryEl.textContent = '0';
+    
+    alert('Profile has been reset successfully.');
+  }
 }
 
 // Handle profile photo upload
@@ -56,17 +89,36 @@ photoIn.addEventListener('change', (e) => {
   }
 });
 
+// Clear custom validation messages when input changes
+sensIn.addEventListener('input', () => {
+  sensIn.setCustomValidity('');
+});
+
 form.addEventListener('submit', e => {
   e.preventDefault();
   
-  // Validate sensitivity value
+  // Check HTML5 form validation first
+  if (!form.checkValidity()) {
+    // If the form is invalid, trigger the browser's validation UI
+    form.reportValidity();
+    return;
+  }
+  
+  // Additional validation for sensitivity
   const sensitivityValue = parseFloat(sensIn.value.trim());
   if (!sensitivityValue) {
-    return alert('Please enter your sensitivity before saving.');
+    sensIn.setCustomValidity('Please enter your sensitivity before saving.');
+    sensIn.reportValidity();
+    return;
   }
   
   if (sensitivityValue < 0.01 || sensitivityValue > 10) {
-    return alert('Sensitivity must be between 0.01 and 10.');
+    sensIn.setCustomValidity('Sensitivity must be between 0.01 and 10.');
+    sensIn.reportValidity();
+    return;
+  } else {
+    // Clear any previous custom validity message
+    sensIn.setCustomValidity('');
   }
   
   // Save form data
@@ -92,6 +144,9 @@ form.addEventListener('submit', e => {
   
   alert('Profile saved!');
 });
+
+// Add event listener for reset button
+resetButton.addEventListener('click', resetProfile);
 
 // Initialize profile
 loadProfile();

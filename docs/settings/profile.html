@@ -86,12 +86,16 @@
               required
               min="0.01"
               max="10"
+              title="Enter a value between 0.01 and 10. Lower values make cursor movement slower, higher values make it faster."
             />
             <small class="error-message"></small>
             <small class="help-text">Recommended range: 0.1 - 4.0</small>
           </div>
 
-          <button type="submit">Save Profile</button>
+          <div class="button-group">
+            <button type="submit" class="save-btn">Save Profile</button>
+            <button type="button" id="reset-profile" class="reset-btn">Reset Profile</button>
+          </div>
         </form>
 
         <p class="highscore-display">
