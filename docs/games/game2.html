@@ -40,18 +40,18 @@
       <section class="game-container">
         <h1>Number Guessing Game</h1>
 
-        <div class="game-controls">
-          <label for="difficulty">Difficulty:</label>
-          <select id="difficulty" title="Select game difficulty level" tabindex="0">
+        <div class="game2-controls">
+          <label for="difficulty-game2">Difficulty:</label>
+          <select id="difficulty-game2" title="Select game difficulty level" tabindex="0">
             <option value="25">Easy (1-25)</option>
             <option value="100" selected>Medium (1-100)</option>
             <option value="500">Hard (1-500)</option>
           </select>
-          <button id="start-btn" title="Start new game" tabindex="0">New Game</button>
+          <button id="start-btn-game2" title="Start new game" tabindex="0">New Game</button>
         </div>
 
-        <div class="game-area">
-          <section id="objective">
+        <div class="game2-area">
+          <section id="objective-game2">
             <h2>Objective &amp; How to Play</h2>
             <p>
               Choose a difficulty, then try to guess the hidden number in as few
@@ -61,36 +61,36 @@
             </p>
           </section>
 
-          <div id="instructions" data-default="Guess a number between 1-{max}">
-            <p>Guess a number between <span class="number-range">1-100</span></p>
+          <div id="instructions-game2" data-default="Guess a number between 1-{max}">
+            <p>Guess a number between <span class="number-range-game2">1-100</span></p>
           </div>
 
-          <form class="guess-form" aria-live="polite">
-            <div class="input-group">
-              <label for="guess-input">Enter your guess</label>
+          <form class="guess-form-game2" aria-live="polite">
+            <div class="input-group-game2">
+              <label for="guess-input-game2">Enter your guess</label>
               <input
                 type="number"
-                id="guess-input"
-                name="guess-input"
+                id="guess-input-game2"
+                name="guess-input-game2"
                 min="1"
                 max="100"
                 required
-                class="guess-input"
-                aria-describedby="instructions input-error"
+                class="guess-input-game2"
+                aria-describedby="instructions-game2 input-error-game2"
                 tabindex="0"
               />
-              <span id="input-error" class="error-message" role="alert"></span>
+              <span id="input-error-game2" class="error-message-game2" role="alert"></span>
             </div>
 
-            <button id="submit-guess" title="Submit your number guess" tabindex="0">Submit Guess</button>
+            <button id="submit-guess-game2" title="Submit your number guess" tabindex="0">Submit Guess</button>
           </form>
 
-          <div id="feedback" aria-live="polite" aria-atomic="true">
-            <p id="message"></p>
-            <p id="attempts">Attempts: 0</p>
-            <p id="score">Score: 0</p>
-            <p id="high-score">High Score: 0</p>
-            <ul id="guess-history"></ul>
+          <div id="feedback-game2" aria-live="polite" aria-atomic="true">
+            <p id="message-game2"></p>
+            <p id="attempts-game2">Attempts: 0</p>
+            <p id="score-game2">Score: 0</p>
+            <p id="high-score-game2">High Score: 0</p>
+            <ul id="guess-history-game2"></ul>
           </div>
         </div>
       </section>
@@ -100,13 +100,13 @@
       <p>&copy; 2025 Simple Games Gang</p>
     </footer>
 <!-- Game finisher overlay -->
-  <div id="game-stats" class="overlay-hidden" style="display: none;">
-    <div class="modal">
+  <div id="game-stats-game2" class="overlay-hidden-game2" style="display: none;">
+    <div class="modal-game2">
       <h2>Game Complete!</h2>
-      <p>Attempts: <span id="final-attempts">0</span></p>
-      <p>Score: <span id="final-score">0</span></p>
-      <p>High Score: <span id="final-high-score">0</span></p>
-      <button id="play-again">Play Again</button>
+      <p>Attempts: <span id="final-attempts-game2">0</span></p>
+      <p>Score: <span id="final-score-game2">0</span></p>
+      <p>High Score: <span id="final-high-score-game2">0</span></p>
+      <button id="play-again-game2">Play Again</button>
     </div>
   </div>
       <script src="../js/games/game2.js"></script>
