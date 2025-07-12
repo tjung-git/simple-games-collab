@@ -14,8 +14,8 @@ const displayUsername = document.getElementById('display-username');
 const displaySensitivity = document.getElementById('display-sensitivity');
 const profilePhoto = document.getElementById('profile-photo');
 
-// Default avatar as data URI
-const DEFAULT_AVATAR = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTYgMjU2Ij48cmVjdCB3aWR0aD0iMjU2IiBoZWlnaHQ9IjI1NiIgZmlsbD0iIzM0M2E0MCIvPjxjaXJjbGUgY3g9IjEyOCIgY3k9IjEwMCIgcj0iNTAiIGZpbGw9IiM3ZjhjOGQiLz48cGF0aCBkPSJNMjE0IDIxNy4xQzIxNCAyMTcuMSAxODkuNCAxNjggMTI4IDE2OEMxMjggMTY4IDY2LjYgMTY4IDQyIDE3Ny4xQzE3LjQgMTg2LjIgNDIgMjE3LjEgNDIgMjE3LjFIMjE0WiIgZmlsbD0iIzdmOGM4ZCIvPjwvc3ZnPg==';
+// Default profile picture from Wikimedia Commons
+const DEFAULT_AVATAR = 'https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg';
 
 function loadProfile() {
   const username = localStorage.getItem('username') || '';
