@@ -38,7 +38,7 @@
   100% { background-position: 0% 50%; }
 }
 
-.game-controls {
+.game2-controls {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -51,13 +51,13 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.game-controls label {
+.game2-controls label {
   font-weight: bold;
   color: var(--light);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-.game-controls select {
+.game2-controls select {
   padding: 0.75rem 1rem;
   border-radius: 8px;
   border: none;
@@ -68,17 +68,17 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.game-controls select:hover {
+.game2-controls select:hover {
   background: rgba(0, 0, 0, 0.4);
   transform: translateY(-2px);
 }
 
-.game-controls select:focus {
+.game2-controls select:focus {
   outline: none;
   box-shadow: 0 0 0 2px var(--primary);
 }
 
-.game-controls button {
+.game2-controls button {
   padding: 0.75rem 1.5rem;
   background: linear-gradient(to right, var(--primary), var(--primary-dark));
   color: white;
@@ -92,23 +92,23 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-.game-controls button:hover {
+.game2-controls button:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   background: linear-gradient(to right, var(--primary-dark), var(--primary));
 }
 
-.game-controls button:active {
+.game2-controls button:active {
   transform: translateY(1px);
 }
 
-.game-area {
+.game2-area {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
-#objective {
+#objective-game2 {
   padding: 1.5rem;
   background: rgba(0, 0, 0, 0.2);
   border-radius: 12px;
@@ -116,18 +116,18 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-#objective h2 {
+#objective-game2 h2 {
   margin: 0 0 1rem;
   color: var(--primary);
   font-size: 1.5rem;
 }
 
-#objective p {
+#objective-game2 p {
   color: var(--light);
   line-height: 1.6;
 }
 
-#instructions {
+#instructions-game2 {
   font-size: 1.3rem;
   text-align: center;
   margin: 1rem 0;
@@ -143,7 +143,7 @@
   overflow: hidden;
 }
 
-#instructions::before {
+#instructions-game2::before {
   content: "";
   position: absolute;
   top: 0;
@@ -155,7 +155,7 @@
   background-size: 200% 200%;
 }
 
-#instructions .number-range {
+#instructions-game2 .number-range-game2 {
   font-weight: bold;
   color: var(--primary);
   animation: pulse 2s infinite;
@@ -167,25 +167,25 @@
   100% { transform: scale(1); }
 }
 
-.guess-form {
+.guess-form-game2 {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-.input-group {
+.input-group-game2 {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
 }
 
-.input-group label {
+.input-group-game2 label {
   font-weight: bold;
   color: var(--light);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-.guess-input {
+.guess-input-game2 {
   padding: 1rem;
   border: none;
   border-radius: 8px;
@@ -196,14 +196,14 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.guess-input:focus {
+.guess-input-game2:focus {
   outline: none;
   box-shadow: 0 0 0 2px var(--primary);
   background: rgba(0, 0, 0, 0.4);
   transform: translateY(-2px);
 }
 
-.error-message {
+.error-message-game2 {
   color: #e74c3c;
   font-size: 0.9rem;
   min-height: 1.2rem;
@@ -216,7 +216,7 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-#submit-guess {
+#submit-guess-game2 {
   padding: 1rem;
   background: linear-gradient(to right, var(--secondary), #2980b9);
   color: white;
@@ -230,17 +230,17 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-#submit-guess:hover {
+#submit-guess-game2:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   background: linear-gradient(to right, #2980b9, var(--secondary));
 }
 
-#submit-guess:active {
+#submit-guess-game2:active {
   transform: translateY(1px);
 }
 
-#feedback {
+#feedback-game2 {
   padding: 1.5rem;
   background: rgba(0, 0, 0, 0.2);
   border-radius: 12px;
@@ -248,53 +248,62 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-#feedback p {
-  margin: 0.75rem 0;
-  color: var(--light);
-}
-
-#message {
+#message-game2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
   font-weight: bold;
-  font-size: 1.3rem;
-  color: var(--light);
   text-align: center;
+  min-height: 1.5rem;
 }
 
-#guess-history {
+#guess-history-game2 {
   list-style: none;
   padding: 0;
+  margin: 1rem 0 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: 0.5rem;
   justify-content: center;
 }
 
-#guess-history li {
-  background: rgba(0, 0, 0, 0.3);
+#guess-history-game2 li {
   padding: 0.5rem 1rem;
-  border-radius: 20px;
-  color: var(--light);
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  animation: popIn 0.3s ease forwards;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  animation: popIn 0.3s ease;
 }
 
 @keyframes popIn {
-  0% { transform: scale(0.8); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
 
-.success {
+.success-game2 {
   color: #2ecc71 !important;
   text-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
 }
 
-.error {
-  color: var(--error) !important;
+.error-game2 {
+  color: #e74c3c !important;
   text-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
 }
 
-.highlight {
-  animation: pulse 1.5s infinite;
+.highlight-game2 {
+  color: var(--secondary) !important;
+}
+
+.too-low-game2 {
+  color: #3498db !important;
+  text-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+  border-bottom: 2px solid #3498db !important;
+}
+
+.too-high-game2 {
+  color: #e67e22 !important;
+  text-shadow: 0 0 10px rgba(230, 126, 34, 0.5);
+  border-top: 2px solid #e67e22 !important;
 }
 
 @keyframes pulse {
@@ -303,109 +312,107 @@
   100% { transform: scale(1); }
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
-  .game-container {
-    margin: 1rem auto;
+  .game2-container {
+    margin: 1rem;
     padding: 1.5rem;
     border-radius: 12px;
   }
-  
-  .game-container h1 {
+
+  .game2-container h1 {
     font-size: 2rem;
   }
-  
-  .game-controls {
+
+  .game2-controls {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  #objective-game2 {
     padding: 1rem;
   }
-  
-  #objective {
-    padding: 1rem;
-  }
-  
-  #objective h2 {
+
+  #objective-game2 h2 {
     font-size: 1.3rem;
   }
 }
 
 @media (max-width: 480px) {
-  .game-container {
+  .game2-container {
+    margin: 0.5rem;
     padding: 1rem;
-    border-radius: 8px;
   }
-  
-  .game-container h1 {
+
+  .game2-container h1 {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
   }
-  
-  #instructions {
-    font-size: 1rem;
-    padding: 0.75rem;
+
+  #instructions-game2 {
+    font-size: 1.1rem;
+    padding: 1rem;
   }
-  
-  .guess-input {
+
+  .guess-input-game2 {
     padding: 0.75rem;
     font-size: 1rem;
   }
-  
-  #submit-guess {
+
+  #submit-guess-game2 {
     padding: 0.75rem;
   }
 }
-/* Overlay styling */
-.overlay-hidden {
+
+.overlay-hidden-game2 {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(5px);
-  z-index: 1000;
-  display: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.overlay-hidden.active {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
   display: flex;
-  opacity: 1;
   justify-content: center;
   align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
 }
 
-.modal {
+.overlay-hidden-game2.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-game2 {
   background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
-  border-radius: 12px;
   padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
   max-width: 500px;
   width: 90%;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  position: relative;
 }
 
-.modal h2 {
+.modal-game2 h2 {
   color: var(--primary);
+  font-size: 2rem;
   margin-top: 0;
-  font-size: 1.8rem;
-  text-align: center;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.modal p {
+.modal-game2 p {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
   color: var(--light);
-  line-height: 1.6;
-  margin: 1rem 0;
 }
 
-#play-again {
-  display: block;
-  width: 100%;
-  padding: 1rem;
+#play-again-game2 {
   margin-top: 1.5rem;
+  padding: 1rem 2rem;
   background: linear-gradient(to right, var(--primary), var(--primary-dark));
   color: white;
   border: none;
@@ -413,15 +420,19 @@
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-#play-again:hover {
+#play-again-game2:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(to right, var(--primary-dark), var(--primary));
 }
 
 @media (max-width: 600px) {
-  .modal {
+  .modal-game2 {
     padding: 1.5rem;
   }
 }
