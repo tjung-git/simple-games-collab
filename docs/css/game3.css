@@ -1,5 +1,5 @@
 /* Game container styling */
-#game-container {
+#game-container-game3 {
   width: 100%;
   max-width: 600px;
   margin: 2rem auto;
@@ -9,7 +9,7 @@
   border-radius: 8px;
 }
 
-#game-menu h1 {
+#game-menu-game3 h1 {
   text-align: center;
   margin: 0 0 2rem;
   color: var(--light);
@@ -54,7 +54,7 @@
   line-height: 1.6;
 }
 
-.game-controls {
+.game-controls-game3 {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -67,13 +67,13 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.game-controls label {
+.game-controls-game3 label {
   font-weight: bold;
   color: var(--light);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-.game-controls select {
+.game-controls-game3 select {
   padding: 0.75rem 1rem;
   border-radius: 8px;
   border: none;
@@ -84,12 +84,12 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.game-controls select:hover {
+.game-controls-game3 select:hover {
   background: rgba(0, 0, 0, 0.4);
   transform: translateY(-2px);
 }
 
-.game-controls select:focus {
+.game-controls-game3 select:focus {
   outline: none;
   box-shadow: 0 0 0 2px var(--primary);
 }
@@ -121,8 +121,36 @@ button:hover {
   transform: translateY(-2px);
 }
 
+.stats-game3 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stat-item {
+  background: var(--darker);
+  color: var(--light);
+  border: 1px solid var(--primary);
+  padding: 0.5rem;
+  border-radius: 4px;
+  margin: 0;
+}
+
+.best-score-game3 {
+  background: var(--primary);
+  color: var(--darker);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+#reset-btn-game3 {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 /* Use CSS grid for the cards, with a small gap between them */
-.grid {
+.grid-game3{
   display: grid;
   gap: 1rem;
   width: 100%;
@@ -199,12 +227,11 @@ button:hover {
   cursor: default;
 }
 
-/* Score display */
-#score {
-  color: var(--light);
-  margin: 0.5rem 0;
-  text-align: center;
-  font-size: 1.2rem;
+@media (min-width: 600px) {
+  .stats-game3 {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
 /* Reduce emoji size on medium-small screens */
@@ -225,20 +252,20 @@ button:hover {
 
 /* Allow wider game container on tablets */
 @media (min-width: 600px) {
-  #game-container {
+  #game-container-game3 {
     max-width: 700px;
   }
 }
 
 /* Allow even wider container on large screens */
 @media (min-width: 900px) {
-  #game-container {
+  #game-container-game3 {
     max-width: 800px;
   }
 }
 
 /* Overlay styling */
-.overlay-hidden {
+.overlay-hidden-game3 {
   position: fixed;
   top: 0;
   left: 0;
@@ -252,7 +279,7 @@ button:hover {
   transition: opacity 0.3s ease;
 }
 
-.overlay-hidden.active {
+.overlay-hidden-game3.active {
   display: flex;
   opacity: 1;
   justify-content: center;

@@ -21,15 +21,16 @@ var symbols = [
   "🥑",
 ];
 
-var grid = document.querySelector(".grid");
+var grid = document.querySelector(".grid-game3");
 var difficulty = document.getElementById("difficulty");
 var moves = document.getElementById("moves");
-var resetBtn = document.getElementById("reset-btn");
+var resetBtn = document.getElementById("reset-btn-game3");
 var timer = document.getElementById("timer");
-var gameStats = document.getElementById("game-stats");
+var gameStats = document.getElementById("game-stats-game3");
 var finalMoves = document.getElementById("final-moves");
 var finalTime = document.getElementById("final-time");
 var playAgain = document.getElementById("play-again");
+var highScore = document.getElementById('high-score-game3');
 var firstCard = null;
 var secondCard = null;
 var lockFlip = false;
@@ -64,6 +65,7 @@ function init() {
 
   // clear any existing cards
   grid.innerHTML = "";
+  loadHighScore();
 
   // create each card element
   for (var i = 0; i < deck.length; i++) {
@@ -125,9 +127,45 @@ function onCardClick() {
     clearInterval(timerId);
     finalMoves.textContent = moveCount;
     finalTime.textContent = seconds;
+    saveHighScore();
     gameStats.classList.add("active");
   }
 }
+
+function getHighScoreKey() {
+  var total = parseInt(difficulty.value, 10);
+  return 'memoryMatchHighScore_' + total;
+}
+
+function loadHighScore() {
+  var key = getHighScoreKey();
+  var raw = localStorage.getItem(key);
+  if (!raw) {
+    highScore.textContent = 'Best: --';
+    return;
+  }
+  var hs = JSON.parse(raw);
+  highScore.textContent =
+    'Best: ' + hs.moves + ' moves, ' + hs.time + 's';
+}
+
+function saveHighScore() {
+  var key = getHighScoreKey();
+  var raw = localStorage.getItem(key);
+  var old = raw ? JSON.parse(raw) : null;
+  var better =
+    !old ||
+    moveCount < old.moves ||
+    (moveCount === old.moves && seconds < old.time);
+  if (!better) return;
+
+  var hs = { moves: moveCount, time: seconds };
+  localStorage.setItem(key, JSON.stringify(hs));
+  highScore.textContent =
+    'Best: ' + hs.moves + ' moves, ' + hs.time + 's';
+}
+
+
 
 // 4. Run init on page load and when difficulty changes
 document.addEventListener("DOMContentLoaded", init);

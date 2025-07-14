@@ -41,9 +41,9 @@
 
     <main>
       <!-- Main game wrapper -->
-      <div class="game-container" id="game-container">
+      <div class="game-container-game3" id="game-container-game3">
         <!-- Game menu: Shows title, Objective, and allows difficulty selector -->
-        <div id="game-menu">
+        <div id="game-menu-game3">
           <h1>Memory Match</h1>
 
           <section id="objective">
@@ -56,7 +56,7 @@
             </p>
           </section>
 
-          <div class="game-controls">
+          <div class="game-controls-game3">
             <label for="difficulty">Difficulty:</label>
             <select
               id="difficulty"
@@ -71,16 +71,17 @@
         </div>
 
         <!-- Stats display and restart control -->
-        <div id="game-header">
-          <div class="stats">
-            <span id="moves">Moves: 0</span>
-            <span id="timer">Time: 0s</span>
+        <div id="game-header-game3">
+          <div class="stats-game3">
+            <div id="moves" class="stat-item">Moves: 0</div>
+            <div id="timer" class="stat-item">Time: 0s</div>
+            <div id="high-score-game3" class="stat-item best-score-game3">
           </div>
-          <button id="reset-btn">Restart</button>
+          <button id="reset-btn-game3">Restart</button>
         </div>
-        <div class="grid"></div>
+        <div class="grid-game3"></div>
 
-        <div id="game-stats" class="overlay-hidden">
+        <div id="game-stats-game3" class="overlay-hidden-game3">
           <div class="modal">
             <p>Moves: <span id="final-moves">0</span></p>
             <p>Time: <span id="final-time">0</span>s</p>
