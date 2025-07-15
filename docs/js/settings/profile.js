@@ -42,6 +42,20 @@ function loadProfile() {
   hsGuessEl.textContent = game2HighScore;
   
   hsMemoryEl.textContent = localStorage.getItem('highscore-memory') || '0';
+
+  (function () {
+  const mm16 = JSON.parse(localStorage.getItem('memoryMatchHighScore_16') || 'null');
+  const mm36 = JSON.parse(localStorage.getItem('memoryMatchHighScore_36') || 'null');
+
+  const normalTxt = mm16
+    ? `Normal(4x4) : ${mm16.moves} m, ${mm16.time}s`
+    : 'Normal(4x4) : --';
+  const hardTxt   = mm36
+    ? `Hard(6x6) : ${mm36.moves} m, ${mm36.time}s`
+    : 'Hard(6x6) : --';
+
+  hsMemoryEl.innerHTML = '<br>' + normalTxt + '<br>' + hardTxt;
+})();
 }
 
 // Reset profile data
