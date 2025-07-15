@@ -41,11 +41,11 @@ function loadProfile() {
   const game2HighScore = localStorage.getItem('game2-high-score') || '0';
   hsGuessEl.textContent = game2HighScore;
   
-  hsMemoryEl.textContent = localStorage.getItem('highscore-memory') || '0';
+  
 
   (function () {
-  const mm16 = JSON.parse(localStorage.getItem('memoryMatchHighScore_16') || 'null');
-  const mm36 = JSON.parse(localStorage.getItem('memoryMatchHighScore_36') || 'null');
+  const mm16 = JSON.parse(localStorage.getItem('memoryMatchHighScore_16') || '0');
+  const mm36 = JSON.parse(localStorage.getItem('memoryMatchHighScore_36') || '0');
 
   const normalTxt = mm16
     ? `Normal(4x4) : ${mm16.moves} m, ${mm16.time}s`
@@ -72,8 +72,9 @@ function resetProfile() {
     // Clear high scores
     localStorage.removeItem('highscore-aim');
     localStorage.removeItem('game2-high-score');
-    localStorage.removeItem('highscore-memory');
-    
+    localStorage.removeItem('memoryMatchHighScore_16');
+    localStorage.removeItem('memoryMatchHighScore_36');
+  
     // Reset form and display
     userIn.value = '';
     sensIn.value = '';
