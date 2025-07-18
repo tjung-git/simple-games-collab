@@ -136,19 +136,6 @@ button:hover {
   margin: 0;
 }
 
-.best-score-game3 {
-  background: var(--primary);
-  color: var(--darker);
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-}
-
-#reset-btn-game3 {
-  margin-left: 0;
-  margin-right: 0;
-}
-
 /* Use CSS grid for the cards, with a small gap between them */
 .grid-game3{
   display: grid;

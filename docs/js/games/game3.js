@@ -141,12 +141,12 @@ function loadHighScore() {
   var key = getHighScoreKey();
   var raw = localStorage.getItem(key);
   if (!raw) {
-    highScore.textContent = 'Best: --';
+    highScore.textContent = 'Best Score: --';
     return;
   }
   var hs = JSON.parse(raw);
   highScore.textContent =
-    'Best: ' + hs.moves + ' moves, ' + hs.time + 's';
+    'Best Scote: ' + hs.moves + ' moves, ' + hs.time + 's';
 }
 
 function saveHighScore() {
@@ -162,7 +162,7 @@ function saveHighScore() {
   var hs = { moves: moveCount, time: seconds };
   localStorage.setItem(key, JSON.stringify(hs));
   highScore.textContent =
-    'Best: ' + hs.moves + ' moves, ' + hs.time + 's';
+    'Best Score: ' + hs.moves + ' moves, ' + hs.time + 's';
 }
 
 
