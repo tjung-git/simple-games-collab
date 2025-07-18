@@ -146,7 +146,7 @@ function loadHighScore() {
   }
   var hs = JSON.parse(raw);
   highScore.textContent =
-    'Best Scote: ' + hs.moves + ' moves, ' + hs.time + 's';
+    'Best Score: ' + hs.moves + ' moves, ' + hs.time + 's';
 }
 
 function saveHighScore() {
