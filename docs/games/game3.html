@@ -41,9 +41,9 @@
 
     <main>
       <!-- Main game wrapper -->
-      <div class="game-container" id="game-container">
+      <div class="game-container-game3" id="game-container-game3">
         <!-- Game menu: Shows title, Objective, and allows difficulty selector -->
-        <div id="game-menu">
+        <div id="game-menu-game3">
           <h1>Memory Match</h1>
 
           <section id="objective">
@@ -56,9 +56,14 @@
             </p>
           </section>
 
-          <div class="game-controls">
+          <div class="game-controls-game3">
             <label for="difficulty">Difficulty:</label>
-            <select id="difficulty" title="Select game difficulty level" tabindex="0" aria-label="Game difficulty">
+            <select
+              id="difficulty"
+              title="Select game difficulty level"
+              tabindex="0"
+              aria-label="Game difficulty"
+            >
               <option value="16" selected>Normal (4×4)</option>
               <option value="36">Hard (6×6)</option>
             </select>
@@ -66,127 +71,17 @@
         </div>
 
         <!-- Stats display and restart control -->
-        <div id="game-header">
-          <div class="stats">
-            <span id="moves">Moves: 0</span>
-            <span id="timer">Time: 0s</span>
+        <div id="game-header-game3">
+          <div class="stats-game3">
+            <div id="moves" class="stat-item">Moves: 0</div>
+            <div id="timer" class="stat-item">Time: 0s</div>
+            <div id="high-score-game3" class="stat-item best-score-game3">
           </div>
-          <button id="reset-btn">Restart</button>
+          <button id="reset-btn-game3">Restart</button>
         </div>
-        <br />
+        <div class="grid-game3"></div>
 
-        <!-- 
-        Static 4×4 Memory Match grid for Demo.
-        I manually include 16 cards here to demonstrate the layout in pure HTML/CSS.
-        In Phase 3, JavaScript will:
-          1. Listen to the “Difficulty” selector.
-          2. Toggle the class from 'grid-4' to 'grid-6'.
-          3. Generate, shuffle, and insert these cards dynamically.
-        -->
-        <!-- Phase 2: Static 4×4 demo. In Phase 3, JS will generate/shuffle these. -->
-        <div class="grid grid-4">
-          <div class="card">
-            <div class="card-inner">
-              <div class="card-face-front">?</div>
-              <div class="card-face-back">🍓</div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-inner">
-              <div class="card-face-front">?</div>
-              <div class="card-face-back">🍍</div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-inner">
-              <div class="card-face-front">?</div>
-              <div class="card-face-back">🍌</div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-inner">
-              <div class="card-face-front">?</div>
-              <div class="card-face-back">🍇</div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-inner">
-              <div class="card-face-front">?</div>
-              <div class="card-face-back">🍉</div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-inner">
-              <div class="card-face-front">?</div>
-              <div class="card-face-back">🍎</div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-inner">
-              <div class="card-face-front">?</div>
-              <div class="card-face-back">🥝</div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-inner">
-              <div class="card-face-front">?</div>
-              <div class="card-face-back">🍒</div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-inner">
-              <div class="card-face-front">?</div>
-              <div class="card-face-back">🍓</div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-inner">
-              <div class="card-face-front">?</div>
-              <div class="card-face-back">🍍</div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-inner">
-              <div class="card-face-front">?</div>
-              <div class="card-face-back">🍌</div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-inner">
-              <div class="card-face-front">?</div>
-              <div class="card-face-back">🍇</div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-inner">
-              <div class="card-face-front">?</div>
-              <div class="card-face-back">🍉</div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-inner">
-              <div class="card-face-front">?</div>
-              <div class="card-face-back">🍎</div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-inner">
-              <div class="card-face-front">?</div>
-              <div class="card-face-back">🥝</div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-inner">
-              <div class="card-face-front">?</div>
-              <div class="card-face-back">🍒</div>
-            </div>
-          </div>
-        </div>
-
-        <canvas id="confetti-canvas"></canvas>
-
-        <!-- Overlay shown when the game ends -->
-        <div id="game-stats" class="overlay-hidden" style="display: none;">
+        <div id="game-stats-game3" class="overlay-hidden-game3">
           <div class="modal">
             <p>Moves: <span id="final-moves">0</span></p>
             <p>Time: <span id="final-time">0</span>s</p>
@@ -198,7 +93,7 @@
     <footer>
       <p>&copy; 2025 Simple Games Gang</p>
     </footer>
-        <script src="../js/games/game3.js"></script>
-        <script src="../js/nav.js"></script>
+    <script src="../js/games/game3.js"></script>
+    <script src="../js/nav.js"></script>
   </body>
 </html>
