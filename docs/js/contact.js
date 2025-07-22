@@ -48,10 +48,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Phone Validation
     const phoneVal = phone.value.trim();
-    if (phoneVal) {
+    const err = getError(phone);
+
+    if (!phoneVal) {
+      err.textContent = 'Phone number cannot be empty.';
+      err.style.visibility = 'visible';
+      valid = false;
+    } else {
       const validPhone = /^\d{3}-\d{3}-\d{4}$/;
       if (!validPhone.test(phoneVal)) {
-        const err = getError(phone);
         err.textContent = 'Use format 123-456-7890.';
         err.style.visibility = 'visible';
         valid = false;
