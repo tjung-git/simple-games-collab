@@ -148,3 +148,10 @@ button[type="submit"]:hover {
     gap: 1rem;
   }
 }
+
+@media (min-width: 600px) and (max-width: 1024px) {
+  .contact {
+    padding: clamp(1.5rem, 5vw, 3rem);
+    margin: 2rem;
+  }
+}
