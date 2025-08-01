@@ -49,6 +49,7 @@ nav {
   border-radius: 8px;
   margin: auto;
   max-width: 1200px;
+  overflow-x: hidden;
 }
 
 .banner h1 {
@@ -56,6 +57,8 @@ nav {
   padding-bottom: 3rem;
   margin-bottom: 1rem;
   color: var(--primary);
+  max-width: 100%;
+  word-break: break-word;
 }
 
 .banner p {
@@ -64,6 +67,8 @@ nav {
   margin: 0 auto;
   color: var(--light);
   opacity: 0.9;
+  max-width: 100%;
+  word-break: break-word;
 }
 
 /* about page content styling */
@@ -168,12 +173,14 @@ nav a.active::after {
   position: absolute;
   top: 0;
   right: 0;
+  width: 48px;
+  height: 48px;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 12px;
   z-index: 10;
 }
+
 .nav-toggle .hamburger,
 .nav-toggle .hamburger::before,
 .nav-toggle .hamburger::after {
@@ -185,6 +192,10 @@ nav a.active::after {
   border-radius: 2px;
   position: relative;
   transition: all 0.3s ease;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
 }
 .nav-toggle .hamburger::before {
   top: -7px;
@@ -372,19 +383,19 @@ footer {
   .banner {
     margin: 2rem 1rem;
   }
-  
+
   .banner h1 {
     font-size: 1.8rem;
   }
-  
+
   .banner p {
     font-size: 1rem;
   }
-  
+
   .about article {
     padding: 1.5rem;
   }
-  
+
   .team-members {
     grid-template-columns: 1fr;
   }
@@ -414,5 +425,14 @@ footer {
   .game-card {
     flex: 1 1 100%;
     max-width: 90%;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+  .game-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    justify-items: center;
   }
 }
